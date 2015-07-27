@@ -8,17 +8,48 @@
     %meta{ property: "og:description", content: "Stelios is a designer and developer living in Chicago with his pet toucan." }
     %meta{ property: "og:image", content: "img/sammy.png" }
     %meta{ property: "og:url", content: "http://www.steliosconstantinides.com" }
+    %link{ rel: "shortcut icon", href: "img/favicon.ico" }
+    %link{ rel:"stylesheet", type: "text/css", href: "http://fonts.googleapis.com/css?family=Lato:300,400,700" }
     %link{ rel: "stylesheet", type: "text/css", href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" }
-    %link{ rel: "stylesheet", type: "text/css", href: "css/main.css" }
+    %link{ rel: "stylesheet", type: "text/css", href: "css/all.css" }
+    %script{ type: "text/javascript", src: "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" }
     %script{ type: "text/javascript", src: "dist/all.min.js"}
-    // :javascript
-    //   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    //   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    //   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    //   })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
-    //   ga('create', 'UA-45349922-1', 'auto');
-    //   ga('send', 'pageview');
+    :javascript
+      (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,"script","https://www.google-analytics.com/analytics.js","ga");
+      ga("create", "UA-45349922-1", "auto");
+      ga("send", "pageview");
 
   %body
     .container
-      Hi there
+      .content
+        .intro
+          %img{ src: "img/icon.png", alt: "designer + developer", width: "70", height: "67" }
+          .line{ style: "font-size: 1.68em" } Hello, my name is
+          .line{ style: "font-size: 4em" } <strong>Stelios</strong>
+          %hr
+          .line{ style: "font-size: 1em; line-height: 1.4em; letter-spacing: 0.2em" }
+            I'm a <strong>designer</strong> &amp; <strong>developer</strong> living
+            %br
+            in Chicago with
+            %br
+            my pet toucan
+          %hr
+
+        .links
+          .primary
+            %a.primary{ href: "#" }
+              %i.fa.fa-picture-o
+              Portfolio
+            %a.primary{ href: "#" }
+              %i.fa.fa-newspaper-o
+              Design blog
+          .social
+            %a{ href: "#" }
+              %i.fa.fa-envelope-square
+            %a{ href: "#" }
+              %i.fa.fa-linkedin-square
+            %a{ href: "#" }
+              %i.fa.fa-twitter-square

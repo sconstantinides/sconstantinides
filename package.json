@@ -1,0 +1,19 @@
+{
+  "name": "sconstantinides.github.io",
+  "version": "1.0.0",
+  "description": "Stelios Constantinides' personal site.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sconstantinides/sconstantinides.github.io.git"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-haml": "^0.1.5",
+    "gulp-jshint": "^1.11.2",
+    "gulp-livereload": "^3.8.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.2.0"
+  }
+}

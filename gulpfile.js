@@ -1,12 +1,12 @@
 
-var gulp = require('gulp');
-
-var jshint = require('gulp-jshint');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var haml = require('gulp-haml');
+var gulp = require('gulp'),
+    jshint = require('gulp-jshint'),
+    sass = require('gulp-sass'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
+    haml = require('gulp-haml'),
+    minifyCss = require('gulp-minify-css');
 
 // Check JS for errors
 gulp.task('lint', function() {
@@ -25,11 +25,15 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('dist'));
 });
 
-// Compile SASS
-gulp.task('sass', function() {
+// Compile & minify SASS
+gulp.task('styles', function() {
   return gulp.src('sass/*.sass')
     .pipe(sass())
-    .pipe(gulp.dest('css'));
+    .pipe(concat('all.css'))
+    .pipe(gulp.dest('dist'))
+    .pipe(minifyCss())
+    .pipe(rename('all.min.css'))
+    .pipe(gulp.dest('dist'));
 });
 
 // Compile index.html
@@ -47,4 +51,4 @@ gulp.task('watch', function() {
 });
 
 // Run tasks
-gulp.task('default', ['lint', 'sass', 'scripts', 'index', 'watch']);
+gulp.task('default', ['lint', 'scripts', 'styles', 'index', 'watch']);

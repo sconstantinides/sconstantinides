@@ -1,13 +1,10 @@
 !!! 5
+/ Icon by Mateo Zlatar
 %html
   %head
     %title Stelios Constantinides | designer + developer
     %meta{ name: "description", content: "Stelios is a designer and developer living in Chicago with his pet toucan." }
     %meta{ name: "viewport", content: "width=device-width, initial-scale=1" }
-    %meta{ property: "og:title", content: "Stelios Constantinides | designer + developer" }
-    %meta{ property: "og:description", content: "Stelios is a designer and developer living in Chicago with his pet toucan." }
-    %meta{ property: "og:image", content: "img/sammy.png" }
-    %meta{ property: "og:url", content: "http://www.steliosconstantinides.com" }
     %link{ rel: "shortcut icon", href: "img/favicon.ico" }
     %link{ rel:"stylesheet", type: "text/css", href: "http://fonts.googleapis.com/css?family=Lato:300,400,700" }
     %link{ rel: "stylesheet", type: "text/css", href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" }
@@ -25,31 +22,25 @@
   %body
     .container
       .content
-        .intro
-          %img{ src: "img/icon.png", alt: "designer + developer", width: "70", height: "67" }
-          .line{ style: "font-size: 1.68em" } Hello, my name is
-          .line{ style: "font-size: 4em" } <strong>Stelios</strong>
-          %hr
-          .line{ style: "font-size: 1em; line-height: 1.4em; letter-spacing: 0.2em" }
-            I'm a <strong>designer</strong> &amp; <strong>developer</strong> living
-            %br
-            in Chicago with
-            %br
-            my pet toucan
-          %hr
-
-        .links
-          .primary
-            %a.primary{ href: "#" }
-              %i.fa.fa-picture-o
-              Portfolio
-            %a.primary{ href: "#" }
-              %i.fa.fa-newspaper-o
-              Design blog
-          .social
-            %a{ href: "#" }
-              %i.fa.fa-envelope-square
-            %a{ href: "#" }
-              %i.fa.fa-linkedin-square
-            %a{ href: "#" }
-              %i.fa.fa-twitter-square
+        %img{ src: "img/icon.png", alt: "Icon", width: "50", height: "48"}
+        %hr
+        %h2 Hello, my name is
+        %h1 Stelios.
+        %hr
+        %h3 I'm a <strong>designer</strong> &amp; <strong>developer</strong> living in Chicago with my pet toucan
+        %hr
+        .primary-links
+          %a.primary{ href: "http://stothelios.tumblr.com/", title: "Portfolio" }
+            %i.fa.fa-picture-o
+            Portfolio
+          %a.primary{ href: "https://medium.com/@stothelios", title: "Writings" }
+            %i.fa.fa-newspaper-o
+            Writings
+        %hr
+        .social-links
+          %a{ href: "javascript:alert('Say hi: sconstantinides[at]gmail[dot]com')", title: "Email" }
+            %i.fa.fa-envelope-square
+          %a{ href: "https://www.linkedin.com/in/sconstantinides", title: "LinkedIn" }
+            %i.fa.fa-linkedin-square
+          %a{ href: "https://twitter.com/stothelios", title: "Twitter" }
+            %i.fa.fa-twitter-square

@@ -46,7 +46,7 @@ gulp.task('index', function () {
 // Watch for changes
 gulp.task('watch', function() {
   gulp.watch('js/*.js', ['lint', 'scripts']);
-  gulp.watch('sass/*.sass', ['sass']);
+  gulp.watch('sass/*.sass', ['styles']);
   gulp.watch('index.haml', ['index']);
 });
 

@@ -3,10 +3,14 @@ $normal: 300
 $medium: 400
 $bold: 700
 
+$green: #68C3A3
+$white: #fff
+$trans-white: rgba(255, 255, 255, 0.2)
+
 body
   min-width: 320px
-  background-color: #fff
-  color: #fff
+  background-color: $white
+  color: $white
   font-family: Lato, sans-serif
   text-transform: uppercase
 
@@ -17,7 +21,7 @@ a
   display: inline-block
   text-decoration: none
   color: inherit
-  transition: color .2s ease-out
+  transition: color .2s ease-out, background-color .2s ease-out
 
 .text-right
   text-align: right
@@ -25,10 +29,10 @@ a
 .container
   margin: 2vh
   min-height: 96vh
-  background-color: #68C3A3
+  background-color: $green
 
   .content
-    width: 500px
+    width: 15em
     margin: 0 auto
     padding: 2em 0
     text-align: center
@@ -37,7 +41,7 @@ a
     hr
       border: 0
       height: 2px
-      background-color: rgba(255, 255, 255, 0.2)
+      background-color: $trans-white
       margin: 0.5em 0
 
     h2
@@ -54,32 +58,38 @@ a
       font-weight: $normal
       font-size: 0.8em
       line-height: 1.2em
-      letter-spacing: 0.2em
-      padding: 0.3em 3em
+      letter-spacing: 0.1em
+      padding: 0.3em 3.5em
 
     .primary-links
-      font-size: 0.8em
+      margin-top: 1.5em
+      font-size: 0.55em
 
       a
-        margin: 0.3em 0.6em
-        font-weight: $medium
+        margin: 0 0.65em
+        font-weight: $normal
         letter-spacing: 0.05em
 
+        padding: 0.5em 0.8em
+        border: 1px solid $white
+        border-radius: 4px
+
         &:hover
-          color: rgba(255, 255, 255, 0.8)
+          color: $green
+          background-color: $white
 
       i
         margin-right: 0.3em
 
     .social-links
-      margin-top: 1em
+      margin-top: 0.8em
 
       a
-        color: rgba(255, 255, 255, 0.3)
+        color: $trans-white
         margin-right: 1em
 
         &:hover
-          color: rgba(255, 255, 255, 0.5)
+          color: $white
 
         &:last-of-type
           margin-right: 0

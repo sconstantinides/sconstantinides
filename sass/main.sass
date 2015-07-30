@@ -1,11 +1,6 @@
 
-$normal: 300
-$medium: 400
-$bold: 700
-
-$green: #68C3A3
-$white: #fff
-$trans-white: rgba(255, 255, 255, 0.2)
+@import mixins
+@import variables
 
 body
   min-width: 320px
@@ -31,6 +26,10 @@ a
   min-height: 96vh
   background-color: $green
 
+  +media-xs
+    margin: 0
+    min-height: 100vh
+
   .content
     width: 15em
     margin: 0 auto
@@ -38,11 +37,27 @@ a
     text-align: center
     font-size: 2em
 
+    +media-xs
+      width: 100%
+      max-width: 15em
+      font-size: 1.5em
+
+      .icon
+        width: 33px
+        height: 32px
+
     hr
       border: 0
       height: 2px
-      background-color: $trans-white
+      background-color: $trans
       margin: 0.5em 0
+
+    h1
+      font-size: 2.8em
+      letter-spacing: 0.05em
+
+      +media-xs
+        font-size: 2.5em
 
     h2
       font-weight: $normal
@@ -50,16 +65,17 @@ a
       line-height: 1.2em
       letter-spacing: 0.2em
 
-    h1
-      font-size: 2.8em
-      letter-spacing: 0.05em
+      +media-xs
+        font-size: 0.88em
 
     h3
       font-weight: $normal
       font-size: 0.8em
       line-height: 1.2em
       letter-spacing: 0.1em
-      padding: 0.3em 3.5em
+      padding: 0.3em 0
+      display: inline-block
+      width: 12em
 
     .primary-links
       margin-top: 1.5em
@@ -69,7 +85,6 @@ a
         margin: 0 0.65em
         font-weight: $normal
         letter-spacing: 0.05em
-
         padding: 0.5em 0.8em
         border: 1px solid $white
         border-radius: 4px
@@ -85,7 +100,7 @@ a
       margin-top: 0.8em
 
       a
-        color: $trans-white
+        color: $trans
         margin-right: 1em
 
         &:hover

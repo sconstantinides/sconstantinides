@@ -21,31 +21,51 @@ a {
   margin: 2vh;
   min-height: 96vh;
   background-color: #68C3A3; }
+  @media (max-width: 767px) {
+    .container {
+      margin: 0;
+      min-height: 100vh; } }
   .container .content {
     width: 15em;
     margin: 0 auto;
     padding: 2em 0;
     text-align: center;
     font-size: 2em; }
+    @media (max-width: 767px) {
+      .container .content {
+        width: 100%;
+        max-width: 15em;
+        font-size: 1.5em; }
+        .container .content .icon {
+          width: 33px;
+          height: 32px; } }
     .container .content hr {
       border: 0;
       height: 2px;
       background-color: rgba(255, 255, 255, 0.2);
       margin: 0.5em 0; }
+    .container .content h1 {
+      font-size: 2.8em;
+      letter-spacing: 0.05em; }
+      @media (max-width: 767px) {
+        .container .content h1 {
+          font-size: 2.5em; } }
     .container .content h2 {
       font-weight: 300;
       font-size: 1em;
       line-height: 1.2em;
       letter-spacing: 0.2em; }
-    .container .content h1 {
-      font-size: 2.8em;
-      letter-spacing: 0.05em; }
+      @media (max-width: 767px) {
+        .container .content h2 {
+          font-size: 0.88em; } }
     .container .content h3 {
       font-weight: 300;
       font-size: 0.8em;
       line-height: 1.2em;
       letter-spacing: 0.1em;
-      padding: 0.3em 3.5em; }
+      padding: 0.3em 0;
+      display: inline-block;
+      width: 12em; }
     .container .content .primary-links {
       margin-top: 1.5em;
       font-size: 0.55em; }
@@ -70,6 +90,7 @@ a {
           color: #fff; }
         .container .content .social-links a:last-of-type {
           margin-right: 0; }
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -111,3 +132,4 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+

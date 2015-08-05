@@ -2,9 +2,12 @@
 @import mixins
 @import variables
 
+*
+  box-sizing: border-box
+
 body
   min-width: 320px
-  background-color: $white
+  background: $white
   color: $white
   font-family: Lato, sans-serif
   text-transform: uppercase
@@ -16,7 +19,7 @@ a
   display: inline-block
   text-decoration: none
   color: inherit
-  transition: color .2s ease-out, background-color .2s ease-out
+  transition: color .2s ease-out, background .2s ease-out
 
 .text-right
   text-align: right
@@ -24,7 +27,7 @@ a
 .container
   margin: 2vh
   min-height: 96vh
-  background-color: $green
+  background: $green
 
   +media-xs
     margin: 0
@@ -49,7 +52,7 @@ a
     hr
       border: 0
       height: 2px
-      background-color: $trans
+      background: $trans
       margin: 0.5em 0
 
     h1
@@ -78,10 +81,11 @@ a
       width: 12em
 
     .primary-links
-      margin-top: 1.5em
+      max-width: 20.5em
+      margin: 1.5em auto
       font-size: 0.55em
 
-      a
+      .primary-link
         margin: 0 0.65em
         font-weight: $normal
         letter-spacing: 0.05em
@@ -89,17 +93,35 @@ a
         border: 1px solid $white
         border-radius: 4px
 
+        &.left
+          float: left
+
+        &.right
+          float: right
+
         &:hover
           color: $green
-          background-color: $white
+          background: $white
+
+        &.active
+          text-align: left
+          padding: 2em
+          position: absolute
+          z-index: 1000
+          cursor: default
+          color: $green
+          background: $white
+          margin: 0
+          border: 0
 
       i
         margin-right: 0.3em
 
     .social-links
-      margin-top: 0.8em
+      clear: both
+      margin-top: 2.8em
 
-      a
+      .social-link
         color: $trans
         margin-right: 1em
 

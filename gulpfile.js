@@ -37,7 +37,7 @@ gulp.task('styles', function() {
 });
 
 // Compile index.html
-gulp.task('index', function () {
+gulp.task('index', function() {
   gulp.src('index.haml')
     .pipe(haml())
     .pipe(gulp.dest('./'));

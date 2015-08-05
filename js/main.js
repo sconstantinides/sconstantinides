@@ -1,3 +1,3 @@
 function email(){
-  alert('Say howdy at sconstantinides[at]gmail[dot]com');
+  alert('Get in touch: sconstantinides [at] gmail [dot] com');
 }

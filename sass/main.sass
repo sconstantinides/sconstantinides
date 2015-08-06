@@ -24,10 +24,28 @@ a
 .text-right
   text-align: right
 
+.fade-in
+  display: none
+
 .container
   margin: 2vh
   min-height: 96vh
   background: $green
+
+  &.portfolio
+    background: $white
+    color: $green
+
+    .title
+      position: absolute
+      top: 0
+      left: 0
+      font-size: 1.1em
+      letter-spacing: 0.05em
+      padding: 2em
+
+      i
+        margin-right: 0.3em
 
   +media-xs
     margin: 0

@@ -20,10 +20,25 @@ a {
 .text-right {
   text-align: right; }
 
+.fade-in {
+  display: none; }
+
 .container {
   margin: 2vh;
   min-height: 96vh;
   background: #68C3A3; }
+  .container.portfolio {
+    background: #fff;
+    color: #68C3A3; }
+    .container.portfolio .title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 1.1em;
+      letter-spacing: 0.05em;
+      padding: 2em; }
+      .container.portfolio .title i {
+        margin-right: 0.3em; }
   @media (max-width: 767px) {
     .container {
       margin: 0;

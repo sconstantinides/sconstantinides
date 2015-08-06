@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     haml = require('gulp-haml'),
     minifyCss = require('gulp-minify-css'),
-    fileinclude = require('gulp-file-include');
+    fileinclude = require('gulp-file-include'),
+    webserver = require('gulp-webserver');
 
 // Check JS for errors
 gulp.task('lint', function() {
@@ -51,6 +52,16 @@ gulp.task('fileinclude', function() {
     .pipe(gulp.dest('./'));
 });
 
+// Server
+gulp.task('webserver', function() {
+  gulp.src('./')
+    .pipe(webserver({
+      fallback: 'index.html',
+      livereload: true,
+      open: true
+    }));
+});
+
 // Watch for changes
 gulp.task('watch', function() {
   gulp.watch('js/*.js', ['lint', 'scripts']);
@@ -60,4 +71,4 @@ gulp.task('watch', function() {
 });
 
 // Run tasks
-gulp.task('default', ['lint', 'scripts', 'styles', 'haml', 'fileinclude', 'watch']);
+gulp.task('default', ['lint', 'scripts', 'styles', 'haml', 'fileinclude', 'webserver', 'watch']);

@@ -6,18 +6,19 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     haml = require('gulp-haml'),
-    minifyCss = require('gulp-minify-css');
+    minifyCss = require('gulp-minify-css'),
+    fileinclude = require('gulp-file-include');
 
 // Check JS for errors
 gulp.task('lint', function() {
-  return gulp.src('js/*.js')
+  gulp.src('js/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
 // Concatenate & minify JS
 gulp.task('scripts', function() {
-  return gulp.src('js/*.js')
+  gulp.src('js/*.js')
     .pipe(concat('all.js'))
     .pipe(gulp.dest('dist'))
     .pipe(rename('all.min.js'))
@@ -27,7 +28,7 @@ gulp.task('scripts', function() {
 
 // Compile & minify SASS
 gulp.task('styles', function() {
-  return gulp.src('sass/*.sass')
+  gulp.src('sass/*.sass')
     .pipe(sass())
     .pipe(concat('all.css'))
     .pipe(gulp.dest('dist'))
@@ -36,10 +37,17 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('dist'));
 });
 
-// Compile index.html
-gulp.task('index', function() {
-  gulp.src('index.haml')
+// Compile HAML
+gulp.task('haml', function() {
+  gulp.src('haml/*.haml')
     .pipe(haml())
+    .pipe(gulp.dest('html'));
+});
+
+// Compile templates
+gulp.task('fileinclude', function() {
+  gulp.src('html/[^_]*.html')
+    .pipe(fileinclude())
     .pipe(gulp.dest('./'));
 });
 
@@ -47,8 +55,9 @@ gulp.task('index', function() {
 gulp.task('watch', function() {
   gulp.watch('js/*.js', ['lint', 'scripts']);
   gulp.watch('sass/*.sass', ['styles']);
-  gulp.watch('index.haml', ['index']);
+  gulp.watch('haml/*.haml', ['haml']);
+  gulp.watch('html/[^_]*.html', ['fileinclude']);
 });
 
 // Run tasks
-gulp.task('default', ['lint', 'scripts', 'styles', 'index', 'watch']);
+gulp.task('default', ['lint', 'scripts', 'styles', 'haml', 'fileinclude', 'watch']);

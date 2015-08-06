@@ -1,0 +1,30 @@
+!!! 5
+%html
+  @@include('./_header.html')
+
+  %body
+    .container
+      .content
+        %img.icon{ src: "img/icon.png", alt: "Icon", width: "50", height: "48"}
+        %hr
+        %h2 Hello, my name is
+        %h1 Stelios.
+        %hr
+        %h3 I'm a <strong>designer</strong> &amp; <strong>developer</strong> living in Chicago with my pet toucan
+        %hr
+
+        .primary-links
+          %a.primary-link.left{ href: "portfolio.html", title: "Portfolio" }
+            %i.fa.fa-picture-o
+            Portfolio
+          %a.primary-link.right{ href: "https://medium.com/@stothelios", title: "Writings" }
+            %i.fa.fa-newspaper-o
+            Writings
+
+        .social-links
+          %a.social-link{ href: "javascript:email()", title: "Email" }
+            %i.fa.fa-envelope-square
+          %a.social-link{ href: "https://www.linkedin.com/in/sconstantinides", title: "LinkedIn" }
+            %i.fa.fa-linkedin-square
+          %a.social-link{ href: "https://twitter.com/stothelios", title: "Twitter" }
+            %i.fa.fa-twitter-square

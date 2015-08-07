@@ -21,22 +21,32 @@ a
   color: inherit
   transition: color .2s ease-out, background .2s ease-out
 
+i
+  margin-right: 0.3em !important
+
 .text-right
   text-align: right
 
+.slide-in
+  position: relative
+  left: 5em
+
 .fade-in
-  display: none
+  opacity: 0
 
 .container
   margin: 2vh
   min-height: 96vh
   background: $green
 
+  &.landing
+    opacity: 0
+
   &.portfolio
     background: $white
     color: $green
 
-    .title
+    .breadcrumbs
       position: absolute
       top: 0
       left: 0
@@ -44,8 +54,60 @@ a
       letter-spacing: 0.05em
       padding: 2em
 
-      i
-        margin-right: 0.3em
+      .current
+        transition: color .2s ease-out
+
+      .back
+        display: none
+        white-space: nowrap
+        vertical-align: top
+
+        i
+          position: relative
+          left: 0
+          transition: left .2s ease-out
+
+        .text
+          border-bottom: 1px solid transparent
+          transition: border-color .2s ease-out
+
+      &:hover
+        .current
+          cursor: default
+          color: $light-gray
+
+      a:hover
+        i
+          left: -2px
+
+        .text
+          border-color: $green
+
+    .content
+      width: 60%
+
+    .items
+      margin-top: 2.5em
+
+      .item
+        text-align: left
+        background: $off-white
+        border-radius: 8px
+        color: $black
+        margin-bottom: 10%
+        padding: 1em
+
+        h1
+          font-size: 1.5em
+
+        img
+          margin: 1em 0
+          width: 100%
+
+        p
+          font-size: 0.55em
+          line-height: 1.5em
+          text-transform: none
 
   +media-xs
     margin: 0

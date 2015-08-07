@@ -16,7 +16,11 @@ $(function() {
     $(this).animate({ width: '100%', height: height, left: 0, top: 0 });
   });
 
-  $('.fade-in').fadeIn();
+  $('.fade-in').animate({opacity: 1}, 500);
+
+  $('.breadcrumbs').hover(function() {
+    $('.back').animate({width: 'toggle'}, 300);
+  });
 });
 
 function redirect(href) {

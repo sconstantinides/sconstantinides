@@ -4,9 +4,46 @@
 
   %body
     .container.portfolio
-      .title
-        %i.fa.fa-picture-o
-        Portfolio
+      .breadcrumbs
+        %span.back
+          %a{ href: "/" }
+            %i.fa.fa-arrow-left
+            %span.text
+              Back
+          %span.current &nbsp;&nbsp;/&nbsp;&nbsp;
+        %span.current
+          %i.fa.fa-picture-o
+          Portfolio
 
       .content.fade-in
-        sup
+        %h2
+          Things I've designed + built
+
+        .items
+          .item
+            %h1 title for something
+            %img{ src: "img/sammy.png", alt: "" }
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+          .item
+            %img{ src: "img/laptop.png", alt: "" }
+
+          .item
+            %img{ src: "img/sammy.png", alt: "" }
+
+          .item
+            %img{ src: "img/laptop.png", alt: "" }
+
+          .item
+            %img{ src: "img/sammy.png", alt: "" }
+
+          .item
+            %img{ src: "img/laptop.png", alt: "" }
+
+

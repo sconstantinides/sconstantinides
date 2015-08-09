@@ -48,6 +48,8 @@ i {
       padding: 2em; }
       .container.portfolio .breadcrumbs .current {
         transition: color 0.2s ease-out; }
+        .container.portfolio .breadcrumbs .current.gray {
+          color: #ccc; }
       .container.portfolio .breadcrumbs .back {
         display: none;
         white-space: nowrap;
@@ -59,9 +61,6 @@ i {
         .container.portfolio .breadcrumbs .back .text {
           border-bottom: 1px solid transparent;
           transition: border-color 0.2s ease-out; }
-      .container.portfolio .breadcrumbs:hover .current {
-        cursor: default;
-        color: #ccc; }
       .container.portfolio .breadcrumbs a:hover i {
         left: -2px; }
       .container.portfolio .breadcrumbs a:hover .text {
@@ -72,16 +71,35 @@ i {
       margin-top: 2.5em; }
       .container.portfolio .items .item {
         text-align: left;
-        background: whitesmoke;
+        border: 1px solid #ccc;
         border-radius: 8px;
         color: #333;
         margin-bottom: 10%;
-        padding: 1em; }
-        .container.portfolio .items .item h1 {
-          font-size: 1.5em; }
-        .container.portfolio .items .item img {
-          margin: 1em 0;
-          width: 100%; }
+        padding: 1em 2em; }
+        .container.portfolio .items .item h2 {
+          font-size: 1em;
+          text-transform: none;
+          margin: 1em 0; }
+        .container.portfolio .items .item .image-container {
+          margin: 1em 0; }
+          .container.portfolio .items .item .image-container img.thumb {
+            width: 22%;
+            margin-bottom: 4%;
+            margin-left: 4%;
+            cursor: pointer;
+            padding-bottom: 4px;
+            border-bottom: 4px solid transparent;
+            transition: border-color 0.2s ease-out; }
+            .container.portfolio .items .item .image-container img.thumb:first-of-type {
+              margin-left: 0; }
+            .container.portfolio .items .item .image-container img.thumb:hover {
+              border-color: #ccc; }
+            .container.portfolio .items .item .image-container img.thumb.current {
+              border-color: #68C3A3; }
+          .container.portfolio .items .item .image-container img.large {
+            margin: 0;
+            width: 100%;
+            cursor: default; }
         .container.portfolio .items .item p {
           font-size: 0.55em;
           line-height: 1.5em;

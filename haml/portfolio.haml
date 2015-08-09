@@ -1,6 +1,7 @@
 !!! 5
 %html
   @@include('./_header.html')
+  %script{ type: "text/javascript", src: "dist/portfolio.min.js"}
 
   %body
     .container.portfolio
@@ -10,19 +11,18 @@
             %i.fa.fa-arrow-left
             %span.text
               Back
-          %span.current &nbsp;&nbsp;/&nbsp;&nbsp;
+          %span.current &nbsp;&nbsp;&frasl;&nbsp;&nbsp;
         %span.current
           %i.fa.fa-picture-o
           Portfolio
 
       .content.fade-in
-        %h2
-          Things I've designed + built
+        %h1
+          Things I've designed &plus; built
 
         .items
           .item
-            %h1 title for something
-            %img{ src: "img/sammy.png", alt: "" }
+            %h2 Reddit Concept Redesign
             %p
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -30,20 +30,27 @@
               consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
               cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
               proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            .image-container
+              %img.thumb{ src: "http://41.media.tumblr.com/fac124634e0ca35e78e3fdc2d2d4204f/tumblr_nryvrifaGo1tcblceo4_1280.png", alt: "" }
+              %img.thumb{ src: "http://41.media.tumblr.com/cc5da8fc9ef7d6f0744fd7a0ea9f8b1f/tumblr_nryvrifaGo1tcblceo3_r1_1280.png", alt: "" }
+              %img.thumb.current{ src: "http://41.media.tumblr.com/96a401ee75cc9822f9ca7eb5854131ba/tumblr_nryvrifaGo1tcblceo2_1280.png", alt: "" }
+              %img.thumb{ src: "http://41.media.tumblr.com/8c443c10100efb82ff38266a78c97b4d/tumblr_nryvrifaGo1tcblceo1_1280.png", alt: "" }
+              %img.large{ src: "http://41.media.tumblr.com/96a401ee75cc9822f9ca7eb5854131ba/tumblr_nryvrifaGo1tcblceo2_1280.png", alt: "" }
 
           .item
-            %img{ src: "img/laptop.png", alt: "" }
-
-          .item
-            %img{ src: "img/sammy.png", alt: "" }
-
-          .item
-            %img{ src: "img/laptop.png", alt: "" }
-
-          .item
-            %img{ src: "img/sammy.png", alt: "" }
-
-          .item
-            %img{ src: "img/laptop.png", alt: "" }
+            %h2 Reddit Concept Redesign
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            .image-container
+              %img.thumb{ src: "http://41.media.tumblr.com/fac124634e0ca35e78e3fdc2d2d4204f/tumblr_nryvrifaGo1tcblceo4_1280.png", alt: "" }
+              %img.thumb{ src: "http://41.media.tumblr.com/cc5da8fc9ef7d6f0744fd7a0ea9f8b1f/tumblr_nryvrifaGo1tcblceo3_r1_1280.png", alt: "" }
+              %img.thumb.current{ src: "http://41.media.tumblr.com/96a401ee75cc9822f9ca7eb5854131ba/tumblr_nryvrifaGo1tcblceo2_1280.png", alt: "" }
+              %img.thumb{ src: "http://41.media.tumblr.com/8c443c10100efb82ff38266a78c97b4d/tumblr_nryvrifaGo1tcblceo1_1280.png", alt: "" }
+              %img.large{ src: "http://41.media.tumblr.com/96a401ee75cc9822f9ca7eb5854131ba/tumblr_nryvrifaGo1tcblceo2_1280.png", alt: "" }
 
 

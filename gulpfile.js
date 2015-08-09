@@ -17,12 +17,10 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('default'));
 });
 
-// Concatenate & minify JS
+// Minify JS
 gulp.task('scripts', function() {
   gulp.src('js/*.js')
-    .pipe(concat('all.js'))
-    .pipe(gulp.dest('dist'))
-    .pipe(rename('all.min.js'))
+    .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
     .pipe(gulp.dest('dist'));
 });

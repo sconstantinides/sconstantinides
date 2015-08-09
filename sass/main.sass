@@ -57,6 +57,9 @@ i
       .current
         transition: color .2s ease-out
 
+        &.gray
+          color: $light-gray
+
       .back
         display: none
         white-space: nowrap
@@ -70,11 +73,6 @@ i
         .text
           border-bottom: 1px solid transparent
           transition: border-color .2s ease-out
-
-      &:hover
-        .current
-          cursor: default
-          color: $light-gray
 
       a:hover
         i
@@ -91,18 +89,43 @@ i
 
       .item
         text-align: left
-        background: $off-white
+        border: 1px solid $light-gray
         border-radius: 8px
         color: $black
         margin-bottom: 10%
-        padding: 1em
+        padding: 1em 2em
 
-        h1
-          font-size: 1.5em
-
-        img
+        h2
+          font-size: 1em
+          text-transform: none
           margin: 1em 0
-          width: 100%
+
+        .image-container
+          margin: 1em 0
+
+          img
+            &.thumb
+              width: 22%
+              margin-bottom: 4%
+              margin-left: 4%
+              cursor: pointer
+              padding-bottom: 4px
+              border-bottom: 4px solid transparent
+              transition: border-color .2s ease-out
+
+              &:first-of-type
+                margin-left: 0
+
+              &:hover
+                border-color: $light-gray
+
+              &.current
+                border-color: $green
+
+            &.large
+              margin: 0
+              width: 100%
+              cursor: default
 
         p
           font-size: 0.55em

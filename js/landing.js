@@ -1,24 +1,36 @@
 $(function() {
+  setEmail();
+
   $('.primary-link').click(function(event) {
     event.preventDefault();
-    var href = $(this).attr('href');
 
+    var href = $(this).attr('href');
     window.setTimeout(function() {
       redirect(href);
     }, 500);
 
-    $(this).attr('href', '');
-    $(this).css('left', $(this).offset().left);
-    $(this).css('top', $(this).offset().top);
-    $(this).addClass('active');
-    $(this).animate({ width: '100%', height: $(document).height(), left: 0, top: 0 });
+    expandButton($(this));
+  });
+
+  $('.social-link').hover(function() {
+    $(this).find('.text').animate({ width: 'toggle' }, 300);
   });
 });
 
-function redirect(href) {
-  window.location = href;
+function setEmail() {
+  var user = 'sconstantinides';
+  var domain = 'gmail.com';
+  $('#email').attr('href', 'mailto:' + user + '@' + domain);
 }
 
-function email() {
-  alert('Get in touch: sconstantinides [at] gmail [dot] com');
+function expandButton(target) {
+  target.attr('href', '');
+  target.css('left', target.offset().left);
+  target.css('top', target.offset().top);
+  target.addClass('active');
+  target.animate({ width: '100%', height: $(document).height(), left: 0, top: 0 });
+}
+
+function redirect(href) {
+  window.location = href;
 }

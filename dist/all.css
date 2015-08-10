@@ -61,7 +61,7 @@ i.margin-right {
     font-weight: 300;
     font-size: 1.2em;
     letter-spacing: 0.3em;
-    padding-bottom: 1em; }
+    padding-bottom: 1.5em; }
   .landing h3 {
     font-weight: 300;
     font-size: 1.2em;
@@ -71,7 +71,7 @@ i.margin-right {
     display: inline-block;
     width: 13em; }
   .landing .primary-links {
-    max-width: 19em;
+    max-width: 19.5em;
     margin: 0 auto; }
     .landing .primary-links .primary-link {
       font-weight: 300;
@@ -107,6 +107,14 @@ i.margin-right {
         margin-right: 0; }
       .landing .social-links .social-link:hover {
         color: #fff; }
+      .landing .social-links .social-link .text {
+        display: none;
+        white-space: nowrap;
+        vertical-align: top;
+        font-size: 0.5em;
+        letter-spacing: 0.1em;
+        line-height: 2em;
+        margin-left: 0.3em; }
 
 
 .portfolio {
@@ -116,7 +124,6 @@ i.margin-right {
     width: 60%;
     padding-top: 0; }
   .portfolio h1 {
-    font-weight: 300;
     color: #65C6BB;
     margin: 4em 0;
     font-size: 1.4em;

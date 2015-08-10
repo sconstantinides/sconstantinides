@@ -1,0 +1,53 @@
+@import variables
+@import mixins
+
+*
+  box-sizing: border-box
+
+body
+  min-width: 320px
+  background: $white
+  color: $white
+  font-family: Lato, sans-serif
+  text-transform: uppercase
+
+.container
+  margin: 2vh
+  min-height: 96vh
+  background: $blue
+
+  +media-xs
+    margin: 0
+    min-height: 100vh
+    font-size: 0.5em
+
+.content
+  margin: 0 auto
+  padding: 2em 0
+  text-align: center
+
+  +media-xs
+    width: 100%
+    max-width: 30em
+
+a
+  display: inline-block
+  text-decoration: none
+  color: inherit
+  transition: color .2s ease-out, background .2s ease-out
+
+strong
+  font-weight: $bold
+
+i.margin-right
+  margin-right: 0.3em
+
+.text-right
+  text-align: right
+
+.slide-in
+  position: relative
+  left: 5em
+
+.fade-in
+  opacity: 0

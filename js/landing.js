@@ -2,7 +2,6 @@ $(function() {
   $('.primary-link').click(function(event) {
     event.preventDefault();
     var href = $(this).attr('href');
-    var height = $(document).height();
 
     window.setTimeout(function() {
       redirect(href);
@@ -12,7 +11,7 @@ $(function() {
     $(this).css('left', $(this).offset().left);
     $(this).css('top', $(this).offset().top);
     $(this).addClass('active');
-    $(this).animate({ width: '100%', height: height, left: 0, top: 0 });
+    $(this).animate({ width: '100%', height: $(document).height(), left: 0, top: 0 });
   });
 });
 

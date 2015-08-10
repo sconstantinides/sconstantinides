@@ -1,19 +1,20 @@
 !!! 5
 %html
-  @@include('./_header.html')
-  %script{ type: "text/javascript", src: "dist/portfolio.min.js"}
+  %head
+    @@include('./_header.html')
+    %script{ type: "text/javascript", src: "dist/portfolio.min.js"}
 
   %body
     .container.portfolio
       .breadcrumbs
         %span.back
           %a{ href: "/" }
-            %i.fa.fa-arrow-left
+            %i.margin-right.fa.fa-arrow-left
             %span.text
               Back
           %span.current &nbsp;&nbsp;&frasl;&nbsp;&nbsp;
         %span.current
-          %i.fa.fa-picture-o
+          %i.margin-right.fa.fa-picture-o
           Portfolio
 
       .content.fade-in

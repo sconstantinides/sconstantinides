@@ -1,23 +1,22 @@
 !!! 5
 %html
-  @@include('./_header.html')
-  %script{ type: "text/javascript", src: "dist/index.min.js"}
+  %head
+    @@include('./_header.html')
+    %script{ type: "text/javascript", src: "dist/landing.min.js"}
 
   %body
-    .container.fade-in
+    .container.landing.fade-in
       .content
         %h2 Hello, my name is
-        %h1 Stelios.
-        %hr
+        %h1 Stelios
         %h3 I'm a <strong>designer</strong> &amp; <strong>developer</strong> living in Chicago with my pet toucan
-        %hr
 
         .primary-links
           %a.primary-link.left{ href: "portfolio.html", title: "Portfolio" }
-            %i.fa.fa-picture-o
+            %i.margin-right.fa.fa-picture-o
             Portfolio
           %a.primary-link.right{ href: "https://medium.com/@stothelios", title: "Writings" }
-            %i.fa.fa-newspaper-o
+            %i.margin-right.fa.fa-newspaper-o
             Writings
 
         .social-links

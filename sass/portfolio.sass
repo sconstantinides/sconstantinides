@@ -1,0 +1,100 @@
+@import variables
+@import mixins
+
+.portfolio
+  background: $white
+  color: $blue
+
+  .content
+    width: 60%
+    padding-top: 0
+
+  h1
+    font-weight: $normal
+    color: $blue
+    margin: 4em 0
+    font-size: 1.4em
+    letter-spacing: 0.3em
+
+  h2
+    color: $black
+    font-size: 2em
+    letter-spacing: 0.05em
+    text-transform: none
+    margin: 1em 0
+
+  p
+    line-height: 1.6em
+    text-transform: none
+
+  .breadcrumbs
+    position: absolute
+    top: 0
+    left: 0
+    letter-spacing: 0.1em
+    padding: 2em
+
+    .current
+      transition: color .2s ease-out
+
+      &.gray
+        color: $light-gray
+
+    .back
+      display: none
+      white-space: nowrap
+      vertical-align: top
+
+      i
+        position: relative
+        left: 0
+        transition: left .2s ease-out
+
+      .text
+        border-bottom: 1px solid transparent
+        transition: border-color .2s ease-out
+
+    a:hover
+      i
+        left: -2px
+
+      .text
+        border-color: $blue
+
+  .items
+    margin-top: 2.5em
+
+    .item
+      text-align: left
+      border: 1px solid $light-gray
+      border-radius: 8px
+      color: $black
+      margin-bottom: 10%
+      padding: 1em 2em
+
+      .image-container
+        margin: 1em 0
+
+        img
+          &.thumb
+            width: 22%
+            margin-bottom: 4%
+            margin-left: 4%
+            cursor: pointer
+            padding-bottom: 3px
+            border-bottom: 3px solid transparent
+            transition: border-color .2s ease-out
+
+            &:first-of-type
+              margin-left: 0
+
+            &:hover
+              border-color: $light-gray
+
+            &.current
+              border-color: $blue
+
+          &.large
+            margin: 0
+            width: 100%
+            cursor: default

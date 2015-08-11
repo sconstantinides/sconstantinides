@@ -1,13 +1,14 @@
 
 var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
+    rename = require('gulp-rename'),
+    uglify = require('gulp-uglify'),
+    order = require('gulp-order'),
     sass = require('gulp-sass'),
     concat = require('gulp-concat'),
-    uglify = require('gulp-uglify'),
-    rename = require('gulp-rename'),
-    haml = require('gulp-haml'),
     minifyCss = require('gulp-minify-css'),
-    fileinclude = require('gulp-file-include'),
+    haml = require('gulp-haml'),
+    fileInclude = require('gulp-file-include'),
     webserver = require('gulp-webserver');
 
 // Check JS for errors
@@ -28,6 +29,11 @@ gulp.task('scripts', function() {
 // Compile & minify SASS
 gulp.task('styles', function() {
   gulp.src('sass/*.sass')
+    .pipe(order([
+      'reset.sass',
+      'base.sass',
+      '*'
+    ]))
     .pipe(sass())
     .pipe(concat('all.css'))
     .pipe(gulp.dest('dist'))
@@ -44,9 +50,9 @@ gulp.task('haml', function() {
 });
 
 // Compile templates
-gulp.task('fileinclude', function() {
+gulp.task('fileInclude', function() {
   gulp.src('html/[^_]*.html')
-    .pipe(fileinclude())
+    .pipe(fileInclude())
     .pipe(gulp.dest('./'));
 });
 
@@ -65,8 +71,8 @@ gulp.task('watch', function() {
   gulp.watch('js/*.js', ['lint', 'scripts']);
   gulp.watch('sass/*.sass', ['styles']);
   gulp.watch('haml/*.haml', ['haml']);
-  gulp.watch('html/[^_]*.html', ['fileinclude']);
+  gulp.watch('html/[^_]*.html', ['fileInclude']);
 });
 
 // Run tasks
-gulp.task('default', ['lint', 'scripts', 'styles', 'haml', 'fileinclude', 'webserver', 'watch']);
+gulp.task('default', ['lint', 'scripts', 'styles', 'haml', 'fileInclude', 'webserver', 'watch']);

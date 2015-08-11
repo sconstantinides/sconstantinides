@@ -13,7 +13,7 @@ $(function() {
   });
 
   $('.social-link').hover(function() {
-    $(this).find('.text').animate({ width: 'toggle' }, 300);
+    $(this).find('.text').animate({width: 'toggle'}, 300);
   });
 });
 

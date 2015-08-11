@@ -130,13 +130,36 @@ i.margin-right {
     letter-spacing: 0.3em; }
   .portfolio h2 {
     color: #333;
-    font-size: 2em;
+    font-size: 2.5em;
     letter-spacing: 0.05em;
     text-transform: none;
-    margin: 1em 0; }
+    margin: 1.25em 0 1em 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5em; }
+  .portfolio h3 {
+    color: #65C6BB;
+    font-size: 1.4em;
+    letter-spacing: 0.2em;
+    margin: 2em 0 1.5em 0;
+    font-weight: 300; }
   .portfolio p {
-    line-height: 1.6em;
-    text-transform: none; }
+    font-family: Merriweather, serif;
+    font-weight: 300;
+    font-size: 1.1em;
+    line-height: 1.8em;
+    text-transform: none;
+    margin: 1em 0; }
+    .portfolio p strong {
+      font-weight: 700; }
+    .portfolio p a {
+      display: inline;
+      text-decoration: underline; }
+      .portfolio p a:hover {
+        color: #65C6BB; }
+    .portfolio p.caption {
+      font-size: 0.9em;
+      margin: 1.5em 0 0.75em 0;
+      text-align: center; }
   .portfolio .breadcrumbs {
     position: absolute;
     top: 0;
@@ -170,27 +193,24 @@ i.margin-right {
       border-radius: 8px;
       color: #333;
       margin-bottom: 10%;
-      padding: 1em 2em; }
-      .portfolio .items .item .image-container {
-        margin: 1em 0; }
-        .portfolio .items .item .image-container img.thumb {
-          width: 22%;
-          margin-bottom: 4%;
-          margin-left: 4%;
-          cursor: pointer;
-          padding-bottom: 3px;
-          border-bottom: 3px solid transparent;
-          transition: border-color 0.2s ease-out; }
-          .portfolio .items .item .image-container img.thumb:first-of-type {
-            margin-left: 0; }
-          .portfolio .items .item .image-container img.thumb:hover {
-            border-color: #ccc; }
-          .portfolio .items .item .image-container img.thumb.current {
-            border-color: #65C6BB; }
-        .portfolio .items .item .image-container img.large {
-          margin: 0;
-          width: 100%;
-          cursor: default; }
+      padding: 0 3em 3em 3em; }
+      .portfolio .items .item .image-container img.thumb {
+        width: 22%;
+        margin-left: 4%;
+        cursor: pointer;
+        padding-bottom: 3px;
+        border-bottom: 3px solid transparent;
+        transition: border-color 0.2s ease-out; }
+        .portfolio .items .item .image-container img.thumb:first-of-type {
+          margin-left: 0; }
+        .portfolio .items .item .image-container img.thumb:hover {
+          border-color: #ccc; }
+        .portfolio .items .item .image-container img.thumb.current {
+          border-color: #65C6BB; }
+      .portfolio .items .item .image-container img.large {
+        margin: 0;
+        width: 100%;
+        cursor: default; }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,

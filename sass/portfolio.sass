@@ -93,10 +93,10 @@
       .text
         border-color: $blue
 
-  .items
+  .projects
     margin-top: 2.5em
 
-    .item
+    .project
       text-align: left
       border: 1px solid $light-gray
       border-radius: 8px
@@ -105,25 +105,29 @@
       padding: 0 3em 3em 3em
 
       .image-container
-        img
-          &.thumb
-            width: 22%
-            margin-left: 4%
-            cursor: pointer
-            padding-bottom: 3px
-            border-bottom: 3px solid transparent
-            transition: border-color .2s ease-out
+        text-align: center
 
-            &:first-of-type
-              margin-left: 0
+        .thumb
+          display: inline-block
+          width: 22%
+          height: 6em
+          background-size: contain
+          background-repeat: no-repeat
+          background-position: center center
+          margin-left: 4%
+          cursor: pointer
+          padding-bottom: 3px
+          border: 3px solid $white
+          transition: border-color .2s ease-out
 
-            &:hover
-              border-color: $light-gray
+          &:first-of-type
+            margin-left: 0
 
-            &.current
-              border-color: $blue
+          &:hover
+            border-color: $light-gray
 
-          &.large
-            margin: 0
-            width: 100%
-            cursor: default
+          &.current
+            border-color: $blue
+
+        .large
+          width: 100%

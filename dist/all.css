@@ -78,8 +78,8 @@ a {
 strong {
   font-weight: 700; }
 
-.lower {
-  text-transform: lowercase; }
+.normal-caps {
+  text-transform: none; }
 
 i.margin-right {
   margin-right: 0.3em; }
@@ -233,30 +233,35 @@ i.margin-right {
       left: -2px; }
     .portfolio .breadcrumbs a:hover .text {
       border-color: #65C6BB; }
-  .portfolio .items {
+  .portfolio .projects {
     margin-top: 2.5em; }
-    .portfolio .items .item {
+    .portfolio .projects .project {
       text-align: left;
       border: 1px solid #ccc;
       border-radius: 8px;
       color: #333;
       margin-bottom: 10%;
       padding: 0 3em 3em 3em; }
-      .portfolio .items .item .image-container img.thumb {
-        width: 22%;
-        margin-left: 4%;
-        cursor: pointer;
-        padding-bottom: 3px;
-        border-bottom: 3px solid transparent;
-        transition: border-color 0.2s ease-out; }
-        .portfolio .items .item .image-container img.thumb:first-of-type {
-          margin-left: 0; }
-        .portfolio .items .item .image-container img.thumb:hover {
-          border-color: #ccc; }
-        .portfolio .items .item .image-container img.thumb.current {
-          border-color: #65C6BB; }
-      .portfolio .items .item .image-container img.large {
-        margin: 0;
-        width: 100%;
-        cursor: default; }
+      .portfolio .projects .project .image-container {
+        text-align: center; }
+        .portfolio .projects .project .image-container .thumb {
+          display: inline-block;
+          width: 22%;
+          height: 6em;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+          margin-left: 4%;
+          cursor: pointer;
+          padding-bottom: 3px;
+          border: 3px solid #fff;
+          transition: border-color 0.2s ease-out; }
+          .portfolio .projects .project .image-container .thumb:first-of-type {
+            margin-left: 0; }
+          .portfolio .projects .project .image-container .thumb:hover {
+            border-color: #ccc; }
+          .portfolio .projects .project .image-container .thumb.current {
+            border-color: #65C6BB; }
+        .portfolio .projects .project .image-container .large {
+          width: 100%; }
 

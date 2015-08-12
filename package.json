@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
     "gulp-concat": "^2.6.0",
     "gulp-file-include": "^0.13.7",
     "gulp-haml": "^0.1.5",

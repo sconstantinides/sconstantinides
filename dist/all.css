@@ -50,7 +50,11 @@ body {
   text-transform: uppercase; }
 
 .container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   margin: 2vh;
   min-height: 96vh;
@@ -92,6 +96,8 @@ i.margin-right {
   opacity: 0; }
 
 .landing {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center; }
   .landing .content {
     display: block; }

@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     order = require('gulp-order'),
     sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
     concat = require('gulp-concat'),
     minifyCss = require('gulp-minify-css'),
     haml = require('gulp-haml'),
@@ -35,6 +36,10 @@ gulp.task('styles', function() {
       '*'
     ]))
     .pipe(sass())
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(concat('all.css'))
     .pipe(gulp.dest('dist'))
     .pipe(minifyCss())

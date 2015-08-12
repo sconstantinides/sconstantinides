@@ -78,9 +78,6 @@ a {
 strong {
   font-weight: 700; }
 
-.normal-caps {
-  text-transform: none; }
-
 i.margin-right {
   margin-right: 0.3em; }
 
@@ -192,13 +189,10 @@ i.margin-right {
     margin: 1.2em 0 2.5em 0; }
   .portfolio p {
     font-family: Merriweather, serif;
-    font-weight: 300;
     font-size: 1.1em;
     line-height: 1.8em;
     text-transform: none;
     margin: 1em 0; }
-    .portfolio p strong {
-      font-weight: 700; }
     .portfolio p a {
       display: inline;
       text-decoration: underline; }
@@ -206,7 +200,7 @@ i.margin-right {
         color: #65C6BB; }
     .portfolio p.caption {
       font-size: 0.9em;
-      margin: 1.5em 0 0.75em 0;
+      margin: 2em 0 1em 0;
       text-align: center; }
   .portfolio .breadcrumbs {
     position: absolute;

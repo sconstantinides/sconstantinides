@@ -1,34 +1,46 @@
 
 var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
-    sass = require('gulp-sass'),
-    concat = require('gulp-concat'),
-    uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
+    uglify = require('gulp-uglify'),
+    order = require('gulp-order'),
+    sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    concat = require('gulp-concat'),
+    minifyCss = require('gulp-minify-css'),
     haml = require('gulp-haml'),
-    minifyCss = require('gulp-minify-css');
+    fileInclude = require('gulp-file-include'),
+    webserver = require('gulp-webserver');
 
 // Check JS for errors
 gulp.task('lint', function() {
-  return gulp.src('js/*.js')
+  gulp.src('js/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
-// Concatenate & minify JS
+// Minify JS
 gulp.task('scripts', function() {
-  return gulp.src('js/*.js')
-    .pipe(concat('all.js'))
-    .pipe(gulp.dest('dist'))
-    .pipe(rename('all.min.js'))
+  gulp.src('js/*.js')
+    .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
     .pipe(gulp.dest('dist'));
 });
 
 // Compile & minify SASS
 gulp.task('styles', function() {
-  return gulp.src('sass/*.sass')
+  gulp.src('sass/*.sass')
+    .pipe(order([
+      'reset.sass',
+      'base.sass',
+      '*'
+    ]))
     .pipe(sass())
+    .on('error', onError)
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(concat('all.css'))
     .pipe(gulp.dest('dist'))
     .pipe(minifyCss())
@@ -36,19 +48,45 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('dist'));
 });
 
-// Compile index.html
-gulp.task('index', function() {
-  gulp.src('index.haml')
+// Compile HAML
+gulp.task('haml', function() {
+  gulp.src('haml/*.haml')
     .pipe(haml())
+    .on('error', onError)
+    .pipe(gulp.dest('html'));
+});
+
+// Compile templates
+gulp.task('fileInclude', function() {
+  gulp.src('html/[^_]*.html')
+    .pipe(fileInclude())
+    .on('error', onError)
     .pipe(gulp.dest('./'));
+});
+
+// Server
+gulp.task('webserver', function() {
+  gulp.src('./')
+    .pipe(webserver({
+      fallback: 'index.html',
+      livereload: true,
+      open: true
+    }));
 });
 
 // Watch for changes
 gulp.task('watch', function() {
   gulp.watch('js/*.js', ['lint', 'scripts']);
   gulp.watch('sass/*.sass', ['styles']);
-  gulp.watch('index.haml', ['index']);
+  gulp.watch('haml/*.haml', ['haml']);
+  gulp.watch('html/[^_]*.html', ['fileInclude']);
 });
 
+// Error logging
+function onError(err) {
+  console.log(err);
+  this.emit('end');
+}
+
 // Run tasks
-gulp.task('default', ['lint', 'scripts', 'styles', 'index', 'watch']);
+gulp.task('default', ['lint', 'scripts', 'styles', 'haml', 'fileInclude', 'webserver', 'watch']);

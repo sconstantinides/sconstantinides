@@ -1,0 +1,86 @@
+@import variables
+@import mixins
+
+.landing
+  align-items: center
+
+  .content
+    display: block
+
+  h1
+    font-size: 5.6em
+    letter-spacing: 0.1em
+
+    +media-xs
+      font-size: 4.6em
+
+  h2
+    font-weight: $normal
+    font-size: 1.2em
+    letter-spacing: 0.3em
+    padding-bottom: 1.5em
+
+  h3
+    font-weight: $normal
+    font-size: 1.2em
+    letter-spacing: 0.2em
+    line-height: 1.6em
+    padding: 1.6em 0 2em 0
+    display: inline-block
+    width: 13em
+
+  .primary-links
+    max-width: 19.5em
+    margin: 0 auto
+
+    .primary-link
+      font-weight: $normal
+      letter-spacing: 0.1em
+      padding: 0.5em 0.7em
+      border: 1px solid $trans
+      border-radius: 4px
+
+      &.left
+        float: left
+
+      &.right
+        float: right
+
+      &:hover
+        color: $blue
+        background: $white
+
+      &.active
+        text-align: left
+        padding: 2em
+        position: absolute
+        z-index: 1000
+        cursor: default
+        color: $blue
+        background: $white
+        margin: 0
+        border: 0
+
+  .social-links
+    font-size: 2em
+    margin-top: 1.6em
+    clear: both
+
+    .social-link
+      margin-right: 0.4em
+      color: $trans
+
+      &:last-of-type
+        margin-right: 0
+
+      &:hover
+        color: $white
+
+      .text
+        display: none
+        white-space: nowrap
+        vertical-align: top
+        font-size: 0.5em
+        letter-spacing: 0.1em
+        line-height: 2em
+        margin-left: 0.3em

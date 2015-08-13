@@ -1,0 +1,32 @@
+!!! 5
+%html
+  %head
+    @@include('_header.html')
+    %script{ type: "text/javascript", src: "dist/portfolio.min.js"}
+
+  %body
+    .container.portfolio
+      .breadcrumbs
+        %span.back
+          %a{ href: "/" }
+            %i.margin-right.fa.fa-arrow-left
+            %span.text
+              Back
+          %span.current &nbsp;&nbsp;&frasl;&nbsp;&nbsp;
+        %span.current
+          %i.margin-right.fa.fa-picture-o
+          Portfolio
+
+      .content.fade-in
+        %h1
+          Things I’ve designed &plus; built
+
+        .projects
+          .project
+            @@include('_reliefwatch.html')
+          .project
+            @@include('_notably.html')
+          .project
+            @@include('_reddit.html')
+          .project
+            @@include('_odds_and_ends.html')

@@ -1,0 +1,144 @@
+@import variables
+@import mixins
+
+.portfolio
+  background: $white
+  color: $blue
+
+  .content
+    width: 60%
+
+    +media-md
+      width: 70%
+
+    +media-sm
+      width: 80%
+
+    +media-xs
+      width: 100%
+
+  h1
+    color: $blue
+    margin: 2em 0 4em 0
+    font-size: 1.4em
+    letter-spacing: 0.3em
+    line-height: 1.4em
+
+    +media-xs
+      margin: 4em 2em 0 2em
+
+  h2
+    color: $black
+    font-size: 2.5em
+    letter-spacing: 0.05em
+    text-transform: none
+    margin-top: 1.25em
+    border-bottom: 1px solid $light-gray
+    padding-bottom: 0.4em
+
+  h3
+    color: $blue
+    font-size: 1.4em
+    letter-spacing: 0.1em
+    margin: 2em 0 1.5em 0
+    font-weight: $normal
+
+  .tags
+    color: $gray
+    letter-spacing: 0.1em
+    margin: 1.2em 0 2.5em 0
+
+  p
+    font-family: Merriweather, serif
+    font-size: 1.1em
+    line-height: 1.8em
+    text-transform: none
+    margin: 1em 0
+
+    a
+      display: inline
+      text-decoration: underline
+
+      &:hover
+        color: $blue
+
+    &.caption
+      font-size: 0.9em
+      margin: 2em 0 1em 0
+      text-align: center
+
+  .breadcrumbs
+    position: absolute
+    top: 0
+    left: 0
+    letter-spacing: 0.1em
+    padding: 2em
+
+    .current
+      transition: color .2s ease-out
+
+      &.gray
+        color: $light-gray
+
+    .back
+      display: none
+      white-space: nowrap
+      vertical-align: top
+
+      i
+        position: relative
+        left: 0
+        transition: left .2s ease-out
+
+      .text
+        border-bottom: 1px solid transparent
+        transition: border-color .2s ease-out
+
+    a:hover
+      i
+        left: -2px
+
+      .text
+        border-color: $blue
+
+  .projects
+    .project
+      text-align: left
+      border: 1px solid $light-gray
+      border-radius: 8px
+      color: $black
+      margin: 4em 0
+      padding: 0 3em 3em 3em
+
+      +media-xs
+        border: none
+        padding: 0 2em 0 2em
+
+      .image-container
+        margin-top: 2em
+        text-align: center
+
+        .thumb
+          display: inline-block
+          width: 22%
+          height: 6em
+          background-size: contain
+          background-repeat: no-repeat
+          background-position: center center
+          margin-left: 4%
+          cursor: pointer
+          padding-bottom: 3px
+          border: 3px solid $white
+          transition: border-color .2s ease-out
+
+          &:first-of-type
+            margin-left: 0
+
+          &:hover
+            border-color: $light-gray
+
+          &.current
+            border-color: $blue
+
+        .large
+          width: 100%

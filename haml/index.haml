@@ -1,0 +1,34 @@
+!!! 5
+%html
+  %head
+    @@include('_header.html')
+    %script{ type: "text/javascript", src: "dist/landing.min.js"}
+
+  %body
+    .container.landing.fade-in
+      .content
+        %h2 Hello, my name is
+        %h1 Stelios
+        %h3 I’m a <strong>designer</strong> &amp; <strong>developer</strong> living in Chicago with my pet toucan
+
+        .primary-links
+          %a.primary-link.left{ href: "portfolio.html" }
+            %i.margin-right.fa.fa-picture-o
+            Portfolio
+          %a.primary-link.right{ href: "https://medium.com/@stothelios" }
+            %i.margin-right.fa.fa-newspaper-o
+            Writings
+
+        .social-links
+          %a.social-link#email{ href: "" }
+            %i.fa.fa-envelope-square
+            %span.text Email me
+          %a.social-link{ href: "https://www.linkedin.com/in/sconstantinides" }
+            %i.fa.fa-linkedin-square
+            %span.text LinkedIn
+          %a.social-link{ href: "https://github.com/sconstantinides" }
+            %i.fa.fa-github-square
+            %span.text Fork me
+          %a.social-link{ href: "https://twitter.com/stothelios" }
+            %i.fa.fa-twitter-square
+            %span.text Tweet me

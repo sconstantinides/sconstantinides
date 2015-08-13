@@ -243,6 +243,7 @@ i.margin-right {
       margin-bottom: 10%;
       padding: 0 3em 3em 3em; }
       .portfolio .projects .project .image-container {
+        margin-top: 2em;
         text-align: center; }
         .portfolio .projects .project .image-container .thumb {
           display: inline-block;

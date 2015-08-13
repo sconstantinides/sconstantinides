@@ -36,6 +36,7 @@ gulp.task('styles', function() {
       '*'
     ]))
     .pipe(sass())
+    .on('error', onError)
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
@@ -51,6 +52,7 @@ gulp.task('styles', function() {
 gulp.task('haml', function() {
   gulp.src('haml/*.haml')
     .pipe(haml())
+    .on('error', onError)
     .pipe(gulp.dest('html'));
 });
 
@@ -58,6 +60,7 @@ gulp.task('haml', function() {
 gulp.task('fileInclude', function() {
   gulp.src('html/[^_]*.html')
     .pipe(fileInclude())
+    .on('error', onError)
     .pipe(gulp.dest('./'));
 });
 
@@ -78,6 +81,12 @@ gulp.task('watch', function() {
   gulp.watch('haml/*.haml', ['haml']);
   gulp.watch('html/[^_]*.html', ['fileInclude']);
 });
+
+// Error logging
+function onError(err) {
+  console.log(err);
+  this.emit('end');
+}
 
 // Run tasks
 gulp.task('default', ['lint', 'scripts', 'styles', 'haml', 'fileInclude', 'webserver', 'watch']);

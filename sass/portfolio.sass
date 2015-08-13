@@ -7,13 +7,25 @@
 
   .content
     width: 60%
-    padding-top: 0
+
+    +media-md
+      width: 70%
+
+    +media-sm
+      width: 80%
+
+    +media-xs
+      width: 100%
 
   h1
     color: $blue
-    margin: 4em 0
+    margin: 2em 0 4em 0
     font-size: 1.4em
     letter-spacing: 0.3em
+    line-height: 1.4em
+
+    +media-xs
+      margin: 4em 2em 0 2em
 
   h2
     color: $black
@@ -90,15 +102,17 @@
         border-color: $blue
 
   .projects
-    margin-top: 2.5em
-
     .project
       text-align: left
       border: 1px solid $light-gray
       border-radius: 8px
       color: $black
-      margin-bottom: 10%
+      margin: 4em 0
       padding: 0 3em 3em 3em
+
+      +media-xs
+        border: none
+        padding: 0 2em 0 2em
 
       .image-container
         margin-top: 2em

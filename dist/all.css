@@ -63,15 +63,11 @@ body {
     .container {
       margin: 0;
       min-height: 100vh;
-      font-size: 0.5em; } }
+      font-size: 0.75em; } }
 
 .content {
   padding: 2em 0;
   text-align: center; }
-  @media (max-width: 767px) {
-    .content {
-      width: 100%;
-      max-width: 30em; } }
 
 a {
   display: inline-block;
@@ -104,6 +100,9 @@ i.margin-right {
   .landing h1 {
     font-size: 5.6em;
     letter-spacing: 0.1em; }
+    @media (max-width: 767px) {
+      .landing h1 {
+        font-size: 4.6em; } }
   .landing h2 {
     font-weight: 300;
     font-size: 1.2em;
@@ -168,13 +167,25 @@ i.margin-right {
   background: #fff;
   color: #65C6BB; }
   .portfolio .content {
-    width: 60%;
-    padding-top: 0; }
+    width: 60%; }
+    @media (max-width: 1199px) {
+      .portfolio .content {
+        width: 70%; } }
+    @media (max-width: 991px) {
+      .portfolio .content {
+        width: 80%; } }
+    @media (max-width: 767px) {
+      .portfolio .content {
+        width: 100%; } }
   .portfolio h1 {
     color: #65C6BB;
-    margin: 4em 0;
+    margin: 2em 0 4em 0;
     font-size: 1.4em;
-    letter-spacing: 0.3em; }
+    letter-spacing: 0.3em;
+    line-height: 1.4em; }
+    @media (max-width: 767px) {
+      .portfolio h1 {
+        margin: 4em 2em 0 2em; } }
   .portfolio h2 {
     color: #333;
     font-size: 2.5em;
@@ -233,36 +244,38 @@ i.margin-right {
       left: -2px; }
     .portfolio .breadcrumbs a:hover .text {
       border-color: #65C6BB; }
-  .portfolio .projects {
-    margin-top: 2.5em; }
-    .portfolio .projects .project {
-      text-align: left;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      color: #333;
-      margin-bottom: 10%;
-      padding: 0 3em 3em 3em; }
-      .portfolio .projects .project .image-container {
-        margin-top: 2em;
-        text-align: center; }
-        .portfolio .projects .project .image-container .thumb {
-          display: inline-block;
-          width: 22%;
-          height: 6em;
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center center;
-          margin-left: 4%;
-          cursor: pointer;
-          padding-bottom: 3px;
-          border: 3px solid #fff;
-          transition: border-color 0.2s ease-out; }
-          .portfolio .projects .project .image-container .thumb:first-of-type {
-            margin-left: 0; }
-          .portfolio .projects .project .image-container .thumb:hover {
-            border-color: #ccc; }
-          .portfolio .projects .project .image-container .thumb.current {
-            border-color: #65C6BB; }
-        .portfolio .projects .project .image-container .large {
-          width: 100%; }
+  .portfolio .projects .project {
+    text-align: left;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: #333;
+    margin: 4em 0;
+    padding: 0 3em 3em 3em; }
+    @media (max-width: 767px) {
+      .portfolio .projects .project {
+        border: none;
+        padding: 0 2em 0 2em; } }
+    .portfolio .projects .project .image-container {
+      margin-top: 2em;
+      text-align: center; }
+      .portfolio .projects .project .image-container .thumb {
+        display: inline-block;
+        width: 22%;
+        height: 6em;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin-left: 4%;
+        cursor: pointer;
+        padding-bottom: 3px;
+        border: 3px solid #fff;
+        transition: border-color 0.2s ease-out; }
+        .portfolio .projects .project .image-container .thumb:first-of-type {
+          margin-left: 0; }
+        .portfolio .projects .project .image-container .thumb:hover {
+          border-color: #ccc; }
+        .portfolio .projects .project .image-container .thumb.current {
+          border-color: #65C6BB; }
+      .portfolio .projects .project .image-container .large {
+        width: 100%; }
 

@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    @@include('_header.html')
+    @@include("_header.html")
 
   %body
     .container.portfolio
@@ -22,13 +22,13 @@
 
         .projects
           .project
-            @@include('_reliefwatch.html')
+            @@include("_reliefwatch.html")
           .project
-            @@include('_notably.html')
+            @@include("_notably.html")
           .project
-            @@include('_reddit.html')
+            @@include("_reddit.html")
           .project
-            @@include('_odds_and_ends.html')
+            @@include("_odds_and_ends.html")
 
-    %script{ type: "text/javascript", src: "dist/base.min.js"}
+    @@include("_javascript.html")
     %script{ type: "text/javascript", src: "dist/portfolio.min.js"}

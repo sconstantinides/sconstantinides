@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    @@include('_header.html')
+    @@include("_header.html")
 
   %body
     .container.landing.fade-in
@@ -32,5 +32,5 @@
             %i.fa.fa-twitter-square
             %span.text Tweet me
 
-    %script{ type: "text/javascript", src: "dist/base.min.js"}
+    @@include("_javascript.html")
     %script{ type: "text/javascript", src: "dist/landing.min.js"}

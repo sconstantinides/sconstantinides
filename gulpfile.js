@@ -24,6 +24,7 @@ gulp.task('scripts', function() {
   gulp.src('js/*.js')
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
+    .on('error', onError)
     .pipe(gulp.dest('dist'));
 });
 

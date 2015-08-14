@@ -1,5 +1,7 @@
 $(function() {
-  animateBreadcrumbs();
+  window.setTimeout(function() {
+    animateBreadcrumbs();
+  }, 500);
 
   $('.thumb').click(function() {
     var image_str = $(this).css('background-image');
@@ -9,7 +11,7 @@ $(function() {
     $(this).siblings('.large').css({
       opacity: 0,
       'max-width': $(this).css('max-width')
-    }).attr('src', image).animate({opacity: 1}, 300);
+    }).attr('src', image).animate({opacity: 1}, 200);
 
     var caption = $(this).siblings('.caption');
     caption.find('.number').text($(this).index() + 1);

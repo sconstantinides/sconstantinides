@@ -117,13 +117,13 @@ i.margin-right {
     display: inline-block;
     width: 13em; }
   .landing .primary-links {
-    max-width: 19.5em;
+    max-width: 16.5em;
     margin: 0 auto; }
     .landing .primary-links .primary-link {
       font-weight: 300;
       letter-spacing: 0.1em;
       padding: 0.5em 0.7em;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: 4px; }
       .landing .primary-links .primary-link.left {
         float: left; }
@@ -147,20 +147,27 @@ i.margin-right {
     margin-top: 1.6em;
     clear: both; }
     .landing .social-links .social-link {
-      margin-right: 0.4em;
-      color: rgba(255, 255, 255, 0.2); }
+      padding-right: 0.3em;
+      color: rgba(255, 255, 255, 0.3);
+      font-weight: 300; }
       .landing .social-links .social-link:last-of-type {
-        margin-right: 0; }
-      .landing .social-links .social-link:hover {
-        color: #fff; }
+        padding-right: 0; }
       .landing .social-links .social-link .text {
-        display: none;
+        display: inline-block;
+        width: 0;
+        overflow: hidden;
         white-space: nowrap;
+        text-align: left;
         vertical-align: top;
         font-size: 0.5em;
         letter-spacing: 0.1em;
         line-height: 2em;
-        margin-left: 0.3em; }
+        margin-left: 0.3em;
+        transition: width 0.2s ease-out; }
+      .landing .social-links .social-link:hover {
+        color: #fff; }
+        .landing .social-links .social-link:hover .text {
+          width: 6em; }
 
 
 .portfolio {
@@ -203,7 +210,8 @@ i.margin-right {
   .portfolio .tags {
     color: #aaa;
     letter-spacing: 0.1em;
-    margin: 1.2em 0 2.5em 0; }
+    margin: 1.2em 0 2.5em 0;
+    font-weight: 300; }
   .portfolio p {
     font-family: Merriweather, serif;
     font-size: 1.1em;
@@ -224,7 +232,8 @@ i.margin-right {
     top: 0;
     left: 0;
     letter-spacing: 0.1em;
-    padding: 2em; }
+    padding: 2em;
+    font-weight: 300; }
     .portfolio .breadcrumbs .current {
       transition: color 0.2s ease-out; }
       .portfolio .breadcrumbs .current.gray {

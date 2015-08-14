@@ -2,7 +2,6 @@
 %html
   %head
     @@include('_header.html')
-    %script{ type: "text/javascript", src: "dist/portfolio.min.js"}
 
   %body
     .container.portfolio
@@ -19,7 +18,7 @@
 
       .content.fade-in
         %h1
-          Things I’ve designed &plus; built
+          Things I've designed &plus; built
 
         .projects
           .project
@@ -30,3 +29,6 @@
             @@include('_reddit.html')
           .project
             @@include('_odds_and_ends.html')
+
+    %script{ type: "text/javascript", src: "dist/base.min.js"}
+    %script{ type: "text/javascript", src: "dist/portfolio.min.js"}

@@ -30,7 +30,7 @@
     width: 13em
 
   .primary-links
-    max-width: 19.5em
+    max-width: 16.5em
     margin: 0 auto
 
     .primary-link
@@ -67,20 +67,28 @@
     clear: both
 
     .social-link
-      margin-right: 0.4em
+      padding-right: 0.3em
       color: $trans
+      font-weight: $normal
 
       &:last-of-type
-        margin-right: 0
-
-      &:hover
-        color: $white
+        padding-right: 0
 
       .text
-        display: none
+        display: inline-block
+        width: 0
+        overflow: hidden
         white-space: nowrap
+        text-align: left
         vertical-align: top
         font-size: 0.5em
         letter-spacing: 0.1em
         line-height: 2em
         margin-left: 0.3em
+        transition: width .2s ease-out
+
+      &:hover
+        color: $white
+
+        .text
+          width: 6em

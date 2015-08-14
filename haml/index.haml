@@ -2,22 +2,21 @@
 %html
   %head
     @@include('_header.html')
-    %script{ type: "text/javascript", src: "dist/landing.min.js"}
 
   %body
     .container.landing.fade-in
       .content
         %h2 Hello, my name is
         %h1 Stelios
-        %h3 I’m a <strong>designer</strong> &amp; <strong>developer</strong> living in Chicago with my pet toucan
+        %h3 I'm a <strong>designer</strong> &amp; <strong>developer</strong> living in Chicago with my pet toucan
 
         .primary-links
           %a.primary-link.left{ href: "portfolio.html" }
-            %i.margin-right.fa.fa-picture-o
+            %i.margin-right.fa.fa-image
             Portfolio
           %a.primary-link.right{ href: "https://medium.com/@stothelios" }
-            %i.margin-right.fa.fa-newspaper-o
-            Writings
+            %i.margin-right.fa.fa-medium
+            Blog
 
         .social-links
           %a.social-link#email{ href: "" }
@@ -32,3 +31,6 @@
           %a.social-link{ href: "https://twitter.com/stothelios" }
             %i.fa.fa-twitter-square
             %span.text Tweet me
+
+    %script{ type: "text/javascript", src: "dist/base.min.js"}
+    %script{ type: "text/javascript", src: "dist/landing.min.js"}

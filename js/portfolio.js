@@ -5,7 +5,7 @@ $(function() {
 
   $('.thumb').click(function() {
     var image_str = $(this).css('background-image');
-    var image = image_str.substr(4, image_str.length - 5);
+    var image = image_str.substr(5, image_str.length - 7);
 
     $(this).addClass('current').siblings().removeClass('current');
     $(this).siblings('.large').css({

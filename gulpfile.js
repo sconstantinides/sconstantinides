@@ -28,12 +28,12 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('dist'));
 });
 
-// Compile & minify SASS
+// Compile & minify SCSS
 gulp.task('styles', function() {
-    gulp.src('sass/*.sass')
+    gulp.src('scss/*.scss')
         .pipe(order([
-            'reset.sass',
-            'base.sass',
+            'reset.scss',
+            'base.scss',
             '*'
         ]))
         .pipe(sass())
@@ -76,7 +76,7 @@ gulp.task('webserver', function() {
 
 gulp.task('watch', function() {
     gulp.watch('js/*.js', ['lint', 'scripts']);
-    gulp.watch('sass/*.sass', ['styles']);
+    gulp.watch('scss/*.scss', ['styles']);
     gulp.watch('haml/*.haml', ['haml']);
     gulp.watch('html/[^_]*.html', ['fileInclude']);
 });

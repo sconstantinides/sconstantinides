@@ -2,15 +2,16 @@
 @import 'mixins';
 
 .logo {
-	padding: 1em 1em 1.5em 1em;
 	font-size: 40px;
 	text-transform: uppercase;
 
-	.first {
+	.top {
 		font-size: 1em;
+		font-weight: $normal-weight;
 		letter-spacing: 0.26em;
 		color: transparent;
 		transform: rotate(-17deg) skewX(35deg) skewY(0deg);
+		transition: text-shadow 2s;
 		text-shadow: -1px 1px 0px $blue,
 					 -2px 2px 0px $navy,
 					 -3px 3px 0px $navy,
@@ -23,146 +24,13 @@
 					 -10px 10px 0px $navy;
 	}
 
-	.last {
-		position: relative;
-		left: 2.1em;
-		top: 0.25em;
+	.bottom {
+		width: 240px;
+		line-height: 1.3em;
+		margin: 1.6em 0 0 2em;
 		font-size: 0.45em;
 		letter-spacing: 0.15em;
 		color: $navy;
 		transform: skewY(-17deg);
-	}
-
-	&.slide-up {
-		.first {
-			animation: imprint 0.15s 0.1s steps(1) 1 reverse;
-			animation-fill-mode: backwards;
-		}
-	}
-
-	&.slide-down {
-		.first {
-			animation: imprint 0.15s 0.1s steps(1) 1 normal;
-			animation-fill-mode: forwards;
-		}
-	}
-}
-
-@keyframes imprint {
-	0% {
-		text-shadow: -1px 1px 0px $blue,
-					 -2px 2px 0px $navy,
-					 -3px 3px 0px $navy,
-					 -4px 4px 0px $navy,
-					 -5px 5px 0px $navy,
-					 -6px 6px 0px $navy,
-					 -7px 7px 0px $navy,
-					 -8px 8px 0px $navy,
-					 -9px 9px 0px $navy,
-					 -10px 10px 0px $navy;
-	}
-
-	12.5% {
-		text-shadow: -1px 1px 0px transparent,
-					 -2px 2px 0px $blue,
-					 -3px 3px 0px $navy,
-					 -4px 4px 0px $navy,
-					 -5px 5px 0px $navy,
-					 -6px 6px 0px $navy,
-					 -7px 7px 0px $navy,
-					 -8px 8px 0px $navy,
-					 -9px 9px 0px $navy,
-					 -10px 10px 0px $navy;
-	}
-
-	25% {
-		text-shadow: -1px 1px 0px transparent,
-					 -2px 2px 0px transparent,
-					 -3px 3px 0px $blue,
-					 -4px 4px 0px $navy,
-					 -5px 5px 0px $navy,
-					 -6px 6px 0px $navy,
-					 -7px 7px 0px $navy,
-					 -8px 8px 0px $navy,
-					 -9px 9px 0px $navy,
-					 -10px 10px 0px $navy;
-	}
-
-	37.5% {
-		text-shadow: -1px 1px 0px transparent,
-					 -2px 2px 0px transparent,
-					 -3px 3px 0px transparent,
-					 -4px 4px 0px $blue,
-					 -5px 5px 0px $navy,
-					 -6px 6px 0px $navy,
-					 -7px 7px 0px $navy,
-					 -8px 8px 0px $navy,
-					 -9px 9px 0px $navy,
-					 -10px 10px 0px $navy;
-	}
-
-	50% {
-		text-shadow: -1px 1px 0px transparent,
-					 -2px 2px 0px transparent,
-					 -3px 3px 0px transparent,
-					 -4px 4px 0px transparent,
-					 -5px 5px 0px $blue,
-					 -6px 6px 0px $navy,
-					 -7px 7px 0px $navy,
-					 -8px 8px 0px $navy,
-					 -9px 9px 0px $navy,
-					 -10px 10px 0px $navy;
-	}
-
-	62.5% {
-		text-shadow: -1px 1px 0px transparent,
-					 -2px 2px 0px transparent,
-					 -3px 3px 0px transparent,
-					 -4px 4px 0px transparent,
-					 -5px 5px 0px transparent,
-					 -6px 6px 0px $blue,
-					 -7px 7px 0px $navy,
-					 -8px 8px 0px $navy,
-					 -9px 9px 0px $navy,
-					 -10px 10px 0px $navy;
-	}
-
-	75% {
-		text-shadow: -1px 1px 0px transparent,
-					 -2px 2px 0px transparent,
-					 -3px 3px 0px transparent,
-					 -4px 4px 0px transparent,
-					 -5px 5px 0px transparent,
-					 -6px 6px 0px transparent,
-					 -7px 7px 0px $blue,
-					 -8px 8px 0px $navy,
-					 -9px 9px 0px $navy,
-					 -10px 10px 0px $navy;
-	}
-
-	87.5% {
-		text-shadow: -1px 1px 0px transparent,
-					 -2px 2px 0px transparent,
-					 -3px 3px 0px transparent,
-					 -4px 4px 0px transparent,
-					 -5px 5px 0px transparent,
-					 -6px 6px 0px transparent,
-					 -7px 7px 0px transparent,
-					 -8px 8px 0px $blue,
-					 -9px 9px 0px $navy,
-					 -10px 10px 0px $navy;
-	}
-
-	100% {
-		text-shadow: -1px 1px 0px transparent,
-					 -2px 2px 0px transparent,
-					 -3px 3px 0px transparent,
-					 -4px 4px 0px transparent,
-					 -5px 5px 0px transparent,
-					 -6px 6px 0px transparent,
-					 -7px 7px 0px transparent,
-					 -8px 8px 0px transparent,
-					 -9px 9px 0px $blue,
-					 -10px 10px 0px $navy;
 	}
 }

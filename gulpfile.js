@@ -25,7 +25,6 @@ gulp.task('clean', function () {
 gulp.task('scripts', function() {
     gulp.src('js/**/*')
         .pipe(order([
-            'vendor/*',
             '*'
         ]))
         .pipe(concat('all.js'))

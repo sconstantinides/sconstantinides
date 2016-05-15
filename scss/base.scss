@@ -11,15 +11,16 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: $light-weight;
     min-width: 320px;
-    background: $blue;
     color: $navy;
+    background-color: $blue;
+    transition: background-color 2s;
 }
 
 .container {
     height: 100%;
 }
 
-.slide {
+.content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,10 +29,8 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    overflow: hidden;
-    transform: translateY(-100vh);
+}
 
-    &.active {
-        transform: translateY(0);
-    }
+.fade-in {
+    opacity: 0;
 }

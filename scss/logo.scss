@@ -4,44 +4,46 @@
 .logo {
 	padding: 1em 1em 1.5em 1em;
 	font-size: 40px;
+	text-transform: uppercase;
 
 	.first {
 		font-size: 1em;
 		letter-spacing: 0.26em;
 		color: transparent;
 		transform: rotate(-17deg) skewX(35deg) skewY(0deg);
-		text-shadow: -1px 1px 0px transparent,
-					 -2px 2px 0px transparent,
-					 -3px 3px 0px transparent,
-					 -4px 4px 0px transparent,
-					 -5px 5px 0px transparent,
-					 -6px 6px 0px transparent,
-					 -7px 7px 0px transparent,
-					 -8px 8px 0px transparent,
-					 -9px 9px 0px transparent,
-					 -10px 10px 0px $blue;
+		text-shadow: -1px 1px 0px $blue,
+					 -2px 2px 0px $navy,
+					 -3px 3px 0px $navy,
+					 -4px 4px 0px $navy,
+					 -5px 5px 0px $navy,
+					 -6px 6px 0px $navy,
+					 -7px 7px 0px $navy,
+					 -8px 8px 0px $navy,
+					 -9px 9px 0px $navy,
+					 -10px 10px 0px $navy;
 	}
 
 	.last {
 		position: relative;
-		left: 1em;
-		top: 0.4em;
+		left: 2.1em;
+		top: 0.25em;
 		font-size: 0.45em;
 		letter-spacing: 0.15em;
 		color: $navy;
-		transform: rotate(0) skewX(0) skewY(-17deg);
+		transform: skewY(-17deg);
 	}
 
-	& {
+	&.slide-up {
 		.first {
-			animation: imprint 0.1s 0.6s steps(1) 1 reverse;
-			animation-fill-mode: forwards;
+			animation: imprint 0.15s 0.1s steps(1) 1 reverse;
+			animation-fill-mode: backwards;
 		}
 	}
 
 	&.slide-down {
 		.first {
-			animation: imprint 0.3s steps(1) 1;
+			animation: imprint 0.15s 0.1s steps(1) 1 normal;
+			animation-fill-mode: forwards;
 		}
 	}
 }

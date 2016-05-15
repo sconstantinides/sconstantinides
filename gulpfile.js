@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
+    clean = require('gulp-clean'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
     order = require('gulp-order'),
@@ -17,14 +18,23 @@ gulp.task('lint', function() {
         .pipe(jshint.reporter('default'));
 });
 
+gulp.task('clean', function () {
+	gulp.src('dist/**/*', { read: false })
+		.pipe(clean());
+});
+
 // Minify JS
 gulp.task('scripts', function() {
-    gulp.src('js/*.js')
-        .pipe(rename({
-            suffix: '.min'
-        }))
+    gulp.src('js/**/*')
+        .pipe(order([
+            'vendor/*',
+            '*'
+        ]))
+        .pipe(concat('all.js'))
+        // .pipe(gulp.dest('dist'))
         .pipe(uglify())
         .on('error', onError)
+        .pipe(rename('all.min.js'))
         .pipe(gulp.dest('dist'));
 });
 
@@ -43,7 +53,7 @@ gulp.task('styles', function() {
             cascade: false
         }))
         .pipe(concat('all.css'))
-        .pipe(gulp.dest('dist'))
+        // .pipe(gulp.dest('dist'))
         .pipe(minifyCss())
         .pipe(rename('all.min.css'))
         .pipe(gulp.dest('dist'));
@@ -51,7 +61,7 @@ gulp.task('styles', function() {
 
 // Compile HAML
 gulp.task('haml', function() {
-    gulp.src('haml/*.haml')
+    gulp.src('haml/**/*')
         .pipe(haml())
         .on('error', onError)
         .pipe(gulp.dest('html'));
@@ -70,14 +80,14 @@ gulp.task('webserver', function() {
         .pipe(webserver({
             fallback: 'index.html',
             livereload: true,
-            open: true
+            open: false
         }));
 });
 
 gulp.task('watch', function() {
-    gulp.watch('js/*.js', ['lint', 'scripts']);
-    gulp.watch('scss/*.scss', ['styles']);
-    gulp.watch('haml/*.haml', ['haml']);
+    gulp.watch('js/**/*', ['lint', 'scripts']);
+    gulp.watch('scss/**/*', ['styles']);
+    gulp.watch('haml/**/*', ['haml']);
     gulp.watch('html/[^_]*.html', ['fileInclude']);
 });
 
@@ -86,4 +96,4 @@ function onError(err) {
     this.emit('end');
 }
 
-gulp.task('default', ['lint', 'scripts', 'styles', 'haml', 'fileInclude', 'webserver', 'watch']);
+gulp.task('default', ['lint', 'clean', 'scripts', 'styles', 'haml', 'fileInclude', 'webserver', 'watch']);

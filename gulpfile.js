@@ -7,9 +7,8 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     concat = require('gulp-concat'),
-    minifyCss = require('gulp-minify-css'),
-    haml = require('gulp-haml'),
-    fileInclude = require('gulp-file-include'),
+    cleanCSS = require('gulp-clean-css'),
+    pug = require('gulp-pug'),
     webserver = require('gulp-webserver');
 
 gulp.task('lint', function() {
@@ -23,7 +22,6 @@ gulp.task('clean', function () {
 		.pipe(clean());
 });
 
-// Minify JS
 gulp.task('scripts', function() {
     gulp.src('js/**/*')
         .pipe(order([
@@ -31,14 +29,12 @@ gulp.task('scripts', function() {
             '*'
         ]))
         .pipe(concat('all.js'))
-        // .pipe(gulp.dest('dist'))
         .pipe(uglify())
         .on('error', onError)
         .pipe(rename('all.min.js'))
         .pipe(gulp.dest('dist'));
 });
 
-// Compile & minify SCSS
 gulp.task('styles', function() {
     gulp.src('scss/*.scss')
         .pipe(order([
@@ -53,25 +49,16 @@ gulp.task('styles', function() {
             cascade: false
         }))
         .pipe(concat('all.css'))
-        // .pipe(gulp.dest('dist'))
-        .pipe(minifyCss())
+        .pipe(cleanCSS({
+            compatibility: 'ie8'
+        }))
         .pipe(rename('all.min.css'))
         .pipe(gulp.dest('dist'));
 });
 
-// Compile HAML
-gulp.task('haml', function() {
-    gulp.src('haml/**/*')
-        .pipe(haml())
-        .on('error', onError)
-        .pipe(gulp.dest('html'));
-});
-
-// Compile templates
-gulp.task('fileInclude', function() {
-    gulp.src('html/[^_]*.html')
-        .pipe(fileInclude())
-        .on('error', onError)
+gulp.task('templates', function() {
+    gulp.src('templates/index.pug')
+        .pipe(pug())
         .pipe(gulp.dest('./'));
 });
 
@@ -87,8 +74,7 @@ gulp.task('webserver', function() {
 gulp.task('watch', function() {
     gulp.watch('js/**/*', ['lint', 'scripts']);
     gulp.watch('scss/**/*', ['styles']);
-    gulp.watch('haml/**/*', ['haml']);
-    gulp.watch('html/[^_]*.html', ['fileInclude']);
+    gulp.watch('templates/**/*', ['templates']);
 });
 
 function onError(err) {
@@ -96,4 +82,4 @@ function onError(err) {
     this.emit('end');
 }
 
-gulp.task('default', ['lint', 'clean', 'scripts', 'styles', 'haml', 'fileInclude', 'webserver', 'watch']);
+gulp.task('default', ['lint', 'clean', 'scripts', 'styles', 'templates', 'webserver', 'watch']);

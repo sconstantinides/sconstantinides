@@ -1,9 +1,9 @@
-!!! 5
-%html
-    %head
-        @@include("_header.html")
+doctype html
+html(lang="en")
+    head
+        include _header.pug
 
-    %body
+    body
         .container
             .slide.slide-1.active
                 .logo.slide-up
@@ -20,4 +20,4 @@
                     .first slide 3
                     .last stuff
 
-        @@include("_javascript.html")
+        include _javascript.pug

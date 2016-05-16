@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+    head
+        include _header.pug
+
+    body
+        #portfolio
+            .landing-link Back
+
+            .content
+                h1 Things I&rsquo;ve designed &plus; built
+
+                .projects
+                    .project
+                        include projects/_reliefwatch.pug
+                    .project
+                        include projects/_notably.pug
+
+        include _javascript.pug
+        script(src="dist/portfolio.min.js")

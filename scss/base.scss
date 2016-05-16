@@ -11,26 +11,12 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: $light-weight;
     min-width: 320px;
-    color: $navy;
-    background-color: $blue;
-    transition: background-color 2s;
 }
 
-.container {
-    height: 100%;
+.hidden {
+    display: none;
 }
 
-.content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.fade-in {
-    opacity: 0;
+strong {
+    font-weight: $bold-weight;
 }

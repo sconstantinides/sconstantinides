@@ -1,0 +1,116 @@
+@import 'variables';
+@import 'mixins';
+
+#portfolio {
+    color: $black;
+
+    .landing-link {
+        position: fixed;
+        top: 0;
+        left: 0;
+        letter-spacing: 0.1em;
+        padding: 1.5em;
+        cursor: pointer;
+        color: $blue;
+        transition: padding 0.2s;
+
+        &:hover {
+            padding-left: 1.2em;
+            padding-right: 1.7em;
+        }
+    }
+
+    .content {
+        width: 60%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    h1 {
+        margin: 4em 0;
+        font-size: 1.5em;
+        letter-spacing: 0.2em;
+        line-height: 1.4em;
+        font-weight: $bold-weight;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        font-family: 'Merriweather', serif;
+        font-weight: $bold-weight;
+        font-size: 2em;
+        letter-spacing: 0.05em;
+        border-bottom: 1px solid $black;
+        padding-bottom: 0.4em;
+    }
+
+    h3 {
+        font-family: 'Merriweather', serif;
+        font-weight: $bold-weight;
+        font-size: 1.2em;
+        margin: 2.5em 0 1em;
+    }
+
+    .tags {
+        letter-spacing: 0.1em;
+        margin: 1em 0 2.5em;
+        font-weight: $normal-weight;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-family: 'Merriweather', serif;
+        font-size: 1.1em;
+        line-height: 1.8em;
+        margin: 1em 0;
+
+        &.caption {
+            font-size: 0.9em;
+            margin: 2em 0 1em;
+            text-align: center;
+        }
+    }
+
+    .projects {
+        .project {
+            text-align: left;
+            margin: 4em 0 6em 0;
+            padding: 0 3em 3em;
+
+            .image-container {
+                margin-top: 2em;
+                text-align: center;
+
+                .thumb {
+                    display: inline-block;
+                    width: 22%;
+                    height: 6em;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    margin-left: 4%;
+                    cursor: pointer;
+                    padding-bottom: 3px;
+                    border: 3px solid $white;
+                    transition: border-color 0.2s;
+
+                    &:first-of-type {
+                        margin-left: 0;
+                    }
+
+                    &:hover {
+                        border-color: $black;
+                    }
+
+                    &.current {
+                        border-color: $blue;
+                    }
+                }
+
+                .large {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

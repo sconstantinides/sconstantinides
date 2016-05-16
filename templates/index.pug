@@ -4,14 +4,26 @@ html(lang="en")
         include _header.pug
 
     body
-        .container
-            .content
-                .logo.fade-in
-                    .top Stelios
-                    .bottom.fade-in.
-                        Designs &amp; develops products for the web
-                        <br><br>
-                        // Portfolio
-                        // Blog
+        #landing
+            .logo
+                .top Stelios
+                .bottom
+                    span Designs &amp; develops for the web
+                    .links
+                        .link.portfolio-link
+                            .text Portfolio
+                        .link.external-link(data-href="https://medium.com/@stothelios")
+                            .text Blog
+
+            .social
+                .link.external-link(data-href="https://github.com/sconstantinides")
+                    i.fa.fa-github-alt
+                .link.external-link(data-href="https://dribbble.com/stothelios")
+                    i.fa.fa-dribbble
+                .link.external-link(data-href="https://twitter.com/stothelios")
+                    i.fa.fa-twitter
+                .link.external-link(data-href="https://www.linkedin.com/in/sconstantinides")
+                    i.fa.fa-linkedin
 
         include _javascript.pug
+        script(src="dist/landing.min.js")

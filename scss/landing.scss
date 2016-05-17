@@ -54,16 +54,78 @@
                 margin-top: 1em;
 
                 .link {
+                    position: relative;
                     display: inline-block;
                     cursor: pointer;
                     margin-right: 1em;
-                    padding: 0 0 0.3em 0.5em;
-                    border-left: 1px solid;
-                    border-bottom: 1px solid;
-                    transition: padding-bottom 0.2s;
+                    padding: 0.15em 0.15em 0.3em 0.5em;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 1px;
+                        height: 100%;
+                        background-color: $navy;
+                        transition: height 0.15s;
+                    }
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        width: 100%;
+                        height: 1px;
+                        background-color: $navy;
+                        transition: width 0.15s;
+                        transition-delay: 0.1s;
+                    }
+
+                    .text {
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            width: 1px;
+                            height: 0;
+                            background-color: $navy;
+                            transition: height 0.15s;
+                            transition-delay: 0.1s;
+                        }
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 0;
+                            height: 1px;
+                            background-color: $navy;
+                            transition: width 0.15s;
+                        }
+                    }
 
                     &:hover {
-                        padding-bottom: 1.5em;
+                        &:before {
+                            height: 0;
+                        }
+
+                        &:after {
+                            width: 0;
+                        }
+
+                        .text {
+                            &:before {
+                                height: 100%;
+                            }
+
+                            &:after {
+                                width: 100%;
+                            }
+                        }
                     }
                 }
             }

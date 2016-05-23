@@ -73,11 +73,12 @@ function changeColor(newBackgroundColor) {
 function goToPortfolio() {
 
     $('#landing').off('mousemove').css('transition', 'background-color 0.6s');
+    $('.logo .top').css('transition', 'text-shadow 0.6s');
     changeColor('#1F3A93');
 
     TweenLite.to($('#landing'), 0.6, {
         y: -window.innerHeight + 5,
-        ease: Power2.easeOut,
+        ease: Power2.easeInOut,
         onComplete: function() {
             window.location = '/portfolio.html';
         }

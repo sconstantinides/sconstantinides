@@ -63,7 +63,8 @@ gulp.task('webserver', function() {
         .pipe(webserver({
             fallback: 'index.html',
             livereload: true,
-            open: false
+            open: false,
+            port: 3000
         }));
 });
 

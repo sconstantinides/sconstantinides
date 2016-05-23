@@ -38,24 +38,21 @@ function transitionIn() {
 function setBackground() {
 
     var textColor = $('#landing').css('color'),
-        colors = ['#81CFE0', '#68C3A3', '#EB974E'],
-        newBackgroundColor,
+        colors = ['#68C3A3', '#EB974E', '#81CFE0'], // CSS starts at #81CFE0
         animating = false;
 
-    $('#landing').on('mousemove', changeColor);
+    $('#landing').on('mousemove', pickAndChangeColor);
 
-    function changeColor() {
+    function pickAndChangeColor() {
 
         if (animating) return;
         animating = true;
 
+        var newBackgroundColor;
         newBackgroundColor = colors.shift();
         colors.push(newBackgroundColor);
 
-        $('#landing').css('background-color', newBackgroundColor);
-        $('.logo .top').css({
-            textShadow: '-1px 1px 0px ' + newBackgroundColor + ', -2px 2px 0px ' + textColor + ', -3px 3px 0px ' + textColor + ', -4px 4px 0px ' + textColor + ', -5px 5px 0px ' + textColor + ', -6px 6px 0px ' + textColor + ', -7px 7px 0px ' + textColor + ', -8px 8px 0px ' + textColor + ', -9px 9px 0px ' + textColor + ', -10px 10px 0px ' + textColor
-        });
+        changeColor(newBackgroundColor);
 
         setTimeout(function() {
             animating = false;
@@ -63,10 +60,23 @@ function setBackground() {
     }
 }
 
+function changeColor(newBackgroundColor) {
+
+    var textColor = '#1F3A93';
+
+    $('#landing').css('background-color', newBackgroundColor);
+    $('.logo .top').css({
+        textShadow: '-1px 1px 0px ' + newBackgroundColor + ', -2px 2px 0px ' + textColor + ', -3px 3px 0px ' + textColor + ', -4px 4px 0px ' + textColor + ', -5px 5px 0px ' + textColor + ', -6px 6px 0px ' + textColor + ', -7px 7px 0px ' + textColor + ', -8px 8px 0px ' + textColor + ', -9px 9px 0px ' + textColor + ', -10px 10px 0px ' + textColor
+    });
+}
+
 function goToPortfolio() {
 
-    TweenLite.to($('body'), 0.6, {
-        opacity: 0,
+    $('#landing').off('mousemove').css('transition', 'background-color 0.6s');
+    changeColor('#1F3A93');
+
+    TweenLite.to($('#landing'), 0.6, {
+        y: -window.innerHeight + 5,
         ease: Power2.easeOut,
         onComplete: function() {
             window.location = '/portfolio.html';

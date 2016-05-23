@@ -4,6 +4,15 @@
 #portfolio {
     color: $black;
 
+    .border {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background-color: $navy;
+    }
+
     .landing-link {
         position: fixed;
         top: 0;

@@ -1,5 +1,4 @@
 @import 'variables';
-@import 'mixins';
 
 #landing {
     display: flex;
@@ -15,14 +14,14 @@
     transition: background-color 2s;
 
     .logo {
+        font-size: 4rem;
         opacity: 0;
         margin-top: -2em;
-    	font-size: 40px;
     	text-transform: uppercase;
 
     	.top {
+            font-weight: $source-sans-normal;
     		font-size: 1em;
-    		font-weight: $normal-weight;
     		letter-spacing: 0.26em;
     		color: transparent;
     		transform: rotate(-17deg) skewX(35deg) skewY(0deg);
@@ -41,7 +40,7 @@
 
     	.bottom {
             opacity: 0;
-    		width: 240px;
+    		width: 13em;
     		line-height: 1.3em;
     		margin: 1.6em 0 0 2em;
     		font-size: 0.45em;

@@ -1,5 +1,4 @@
 @import 'variables';
-@import 'mixins';
 
 *,
 *:after,
@@ -7,13 +6,13 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: $light-weight;
-    min-height: 100vh;
-    min-width: 320px;
+html {
+    font-size: 62.5%;
 }
 
-.hidden {
-    display: none;
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: $source-sans-light;
+    font-size: 1.6rem;
+    min-width: 320px;
 }

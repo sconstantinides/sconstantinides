@@ -1,5 +1,4 @@
 @import 'variables';
-@import 'mixins';
 
 #portfolio {
     color: $black;
@@ -15,38 +14,56 @@
 
     .landing-link {
         position: fixed;
-        top: 15px;
-        left: 10px;
-        letter-spacing: 0.1em;
+        top: calc(0.5em + 5px);
+        left: 0.5em;
+        letter-spacing: 0.05em;
         padding: 0.5em;
         cursor: pointer;
         color: $navy;
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            height: 1px;
+            right: 0.5em;
+            width: 0;
+            background-color: $navy;
+            transition: width 0.2s;
+        }
+
+        &:hover:before {
+            width: calc(100% - 1em);
+            left: 0.5em;
+            right: auto;
+        }
     }
 
     .content {
         width: 60%;
+        max-width: 800px;
         text-align: center;
         margin: 0 auto;
     }
 
     h1 {
         font-family: 'Work Sans', sans-serif;
+        font-weight: $work-sans-light;
         display: inline-block;
         color: $navy;
-        padding: 10px 20px;
+        padding: 0.8em 1.6em;
         margin: 6em 0 2em 0;
         letter-spacing: 0.2em;
         line-height: 1.4em;
-        font-weight: 300;
         text-transform: uppercase;
         position: relative;
 
         .outline {
             position: absolute;
-            top: -1px;
-            right: -1px;
-            bottom: -1px;
-            left: -1px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
             border: 1px solid $navy;
             transition: transform 2s;
         }
@@ -54,7 +71,7 @@
 
     h2 {
         font-family: 'Source Sans Pro', sans-serif;
-        font-weight: $bold-weight;
+        font-weight: $source-sans-bold;
         font-size: 2em;
         border-bottom: 1px solid $black;
         padding-bottom: 0.4em;
@@ -62,76 +79,95 @@
 
     h3 {
         font-family: 'Source Sans Pro', sans-serif;
-        font-weight: $bold-weight;
+        font-weight: $source-sans-bold;
         font-size: 1.3em;
         margin: 2.5em 0 1em;
     }
 
     .tags {
         font-family: 'Work Sans', sans-serif;
-        letter-spacing: 0.05em;
+        font-weight: $work-sans-light;
+        font-size: 0.9em;
+        letter-spacing: 0.04em;
         background: rgba(0, 0, 0, 0.03);
         padding: 10px;
-        font-weight: $normal-weight;
     }
 
     p {
         font-family: 'Work Sans', sans-serif;
+        font-weight: $work-sans-normal;
         font-size: 1.1em;
-        font-weight: 400;
         line-height: 1.8em;
         margin: 1em 0;
 
         &.caption {
-            font-family: 'Source Sans Pro', sans-serif;
             font-size: 0.9em;
             margin: 2em 0 1em;
             text-align: center;
 
             strong {
-                font-weight: $bold-weight;
+                font-family: 'Source Sans Pro', sans-serif;
+                font-weight: $source-sans-bold;
             }
         }
     }
 
-    .projects {
+    .project {
+        text-align: left;
+        margin: 4em 0 6em 0;
+        padding: 0 3em 3em;
+
+        .image-container {
+            margin-top: 2em;
+            text-align: center;
+
+            .thumb {
+                display: inline-block;
+                width: 22%;
+                height: 6em;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+                margin-left: 4%;
+                cursor: pointer;
+                border: 3px solid $white;
+
+                &:first-of-type {
+                    margin-left: 0;
+                }
+
+                &.current {
+                    border-color: $navy;
+                }
+
+                &:hover:not(.current) {
+                    border-color: rgba(0, 0, 0, 0.1);
+                }
+            }
+
+            .large {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 799px) {
+    #portfolio {
+        .landing-link {
+            position: absolute;
+        }
+
+        .content {
+            width: calc(100% - 2em);
+        }
+
         .project {
-            text-align: left;
-            margin: 4em 0 6em 0;
-            padding: 0 3em 3em;
+            margin: 2em 0 4em 0;
+            padding: 0;
 
-            .image-container {
-                margin-top: 2em;
-                text-align: center;
-
-                .thumb {
-                    display: inline-block;
-                    width: 22%;
-                    height: 6em;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                    margin-left: 4%;
-                    cursor: pointer;
-                    padding-bottom: 3px;
-                    border: 3px solid $white;
-
-                    &:first-of-type {
-                        margin-left: 0;
-                    }
-
-                    &.current {
-                        border-color: $navy;
-                    }
-
-                    &:hover:not(.current) {
-                        border-color: rgba(0, 0, 0, 0.1);
-                    }
-                }
-
-                .large {
-                    width: 100%;
-                }
+            .image-container .thumb {
+                height: 3em;
             }
         }
     }

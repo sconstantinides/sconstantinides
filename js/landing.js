@@ -48,8 +48,7 @@ function setBackground() {
         if (animating) return;
         animating = true;
 
-        var newBackgroundColor;
-        newBackgroundColor = colors.shift();
+        var newBackgroundColor = colors.shift();
         colors.push(newBackgroundColor);
 
         changeColor(newBackgroundColor);

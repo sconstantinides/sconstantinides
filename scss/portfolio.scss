@@ -15,18 +15,12 @@
 
     .landing-link {
         position: fixed;
-        top: 0;
-        left: 0;
+        top: 15px;
+        left: 10px;
         letter-spacing: 0.1em;
-        padding: 1.5em;
+        padding: 0.5em;
         cursor: pointer;
-        color: $blue;
-        transition: padding 0.2s;
-
-        &:hover {
-            padding-left: 1.2em;
-            padding-right: 1.7em;
-        }
+        color: $navy;
     }
 
     .content {
@@ -36,47 +30,67 @@
     }
 
     h1 {
-        margin: 4em 0;
-        font-size: 1.5em;
+        font-family: 'Work Sans', sans-serif;
+        display: inline-block;
+        color: $navy;
+        padding: 10px 20px;
+        margin: 6em 0 2em 0;
         letter-spacing: 0.2em;
         line-height: 1.4em;
-        font-weight: $bold-weight;
+        font-weight: 300;
         text-transform: uppercase;
+        position: relative;
+
+        .outline {
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            left: -1px;
+            border: 1px solid $navy;
+            transition: transform 2s;
+        }
     }
 
     h2 {
-        font-family: 'Merriweather', serif;
+        font-family: 'Source Sans Pro', sans-serif;
         font-weight: $bold-weight;
         font-size: 2em;
-        letter-spacing: 0.05em;
         border-bottom: 1px solid $black;
         padding-bottom: 0.4em;
     }
 
     h3 {
-        font-family: 'Merriweather', serif;
+        font-family: 'Source Sans Pro', sans-serif;
         font-weight: $bold-weight;
-        font-size: 1.2em;
+        font-size: 1.3em;
         margin: 2.5em 0 1em;
     }
 
     .tags {
-        letter-spacing: 0.1em;
-        margin: 1em 0 2.5em;
+        font-family: 'Work Sans', sans-serif;
+        letter-spacing: 0.05em;
+        background: rgba(0, 0, 0, 0.03);
+        padding: 10px;
         font-weight: $normal-weight;
-        text-transform: uppercase;
     }
 
     p {
-        font-family: 'Merriweather', serif;
+        font-family: 'Work Sans', sans-serif;
         font-size: 1.1em;
+        font-weight: 400;
         line-height: 1.8em;
         margin: 1em 0;
 
         &.caption {
+            font-family: 'Source Sans Pro', sans-serif;
             font-size: 0.9em;
             margin: 2em 0 1em;
             text-align: center;
+
+            strong {
+                font-weight: $bold-weight;
+            }
         }
     }
 
@@ -101,18 +115,17 @@
                     cursor: pointer;
                     padding-bottom: 3px;
                     border: 3px solid $white;
-                    transition: border-color 0.2s;
 
                     &:first-of-type {
                         margin-left: 0;
                     }
 
-                    &:hover {
-                        border-color: $black;
+                    &.current {
+                        border-color: $navy;
                     }
 
-                    &.current {
-                        border-color: $blue;
+                    &:hover:not(.current) {
+                        border-color: rgba(0, 0, 0, 0.1);
                     }
                 }
 

@@ -1,4 +1,6 @@
 $(function() {
+    window.onunload = function(){}; // fixes back button issue in Safari
+
     transitionIn();
     setBackgroundListener();
 

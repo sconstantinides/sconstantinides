@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        include _header.pug
+
+    body
+        #portfolio
+            .border
+
+            .landing-link Back
+
+            .content
+                h1.
+                    Things I&rsquo;ve designed &plus; built
+                    <div class="outline outline-1"></div>
+                    <div class="outline outline-2"></div>
+
+                .projects
+                    .project
+                        include projects/_reliefwatch.pug
+                    .project
+                        include projects/_notably.pug
+
+        include _javascript.pug
+        script(src="dist/portfolio.min.js")

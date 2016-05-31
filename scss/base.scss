@@ -1,0 +1,18 @@
+@import 'variables';
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: $source-sans-light;
+    font-size: 1.6rem;
+    min-width: 320px;
+}

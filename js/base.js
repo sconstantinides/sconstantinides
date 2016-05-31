@@ -1,3 +1,17 @@
 $(function() {
-  $('.fade-in').animate({opacity: 1}, 500);
+    $('.external-link').on('click', externalLink);
 });
+
+function externalLink(evt) {
+
+    var href = $(evt.currentTarget).data('href');
+
+    TweenLite.to($('body'), 0.6, {
+        opacity: 0,
+        y: window.innerHeight,
+        ease: Power2.easeInOut,
+        onComplete: function() {
+            window.location = href;
+        }
+    });
+}

@@ -9,8 +9,11 @@ function transitionIn() {
 
     TweenLite.to($('#landing'), 0.4, {
         delay: 0.1,
-        opacity: 1,
-        ease: Power2.easeOut
+        backgroundColor: '#81CFE0',
+        ease: Power2.easeOut,
+        onComplete: function() {
+            $('#landing').addClass('loaded');
+        }
     });
 
     TweenLite.fromTo($('.logo'), 0.6, {

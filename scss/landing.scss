@@ -1,7 +1,6 @@
 @import 'variables';
 
 #landing {
-    opacity: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,8 +10,11 @@
     bottom: 0;
     left: 0;
     color: $navy;
-    background-color: $blue;
-    transition: background-color 2s;
+    background-color: $white;
+
+    &.loaded {
+        transition: background-color 2s;
+    }
 
     .logo {
         font-size: 4rem;

@@ -1,4 +1,8 @@
 $(function() {
+    $(window).bind('pageshow', function(event) {
+        if (event.originalEvent.persisted) window.location.reload();
+    });
+
     $('.external-link').on('click', externalLink);
 });
 

@@ -22,6 +22,7 @@
         padding: 0.5em;
         cursor: pointer;
         color: $navy;
+        z-index: 1;
 
         &:before {
             content: '';

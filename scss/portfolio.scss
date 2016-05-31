@@ -35,10 +35,12 @@
             transition: width 0.2s;
         }
 
-        &:hover:before {
-            width: calc(100% - 1em);
-            left: 0.5em;
-            right: auto;
+        @media (min-width: 800px) {
+            &:hover:before {
+                width: calc(100% - 1em);
+                left: 0.5em;
+                right: auto;
+            }
         }
     }
 
@@ -144,8 +146,10 @@
                     border-color: $navy;
                 }
 
-                &:hover:not(.current) {
-                    border-color: rgba(0, 0, 0, 0.1);
+                @media (min-width: 800px) {
+                    &:hover:not(.current) {
+                        border-color: rgba(0, 0, 0, 0.1);
+                    }
                 }
             }
 

@@ -1,16 +1,22 @@
 $(function() {
     transitionIn();
-    setBackground();
+    setBackgroundListener();
 
     $('.portfolio-link').on('click', goToPortfolio);
 });
 
 function transitionIn() {
 
+    TweenLite.to($('#landing'), 0.4, {
+        delay: 0.1,
+        opacity: 1,
+        ease: Power2.easeOut
+    });
+
     TweenLite.fromTo($('.logo'), 0.6, {
         y: 50
     }, {
-        delay: 0.1,
+        delay: 0.5,
         y: 0,
         opacity: 1,
         ease: Power2.easeOut
@@ -19,7 +25,7 @@ function transitionIn() {
     TweenLite.fromTo($('.logo .bottom'), 0.6, {
         x: -20,
     }, {
-        delay: 0.1,
+        delay: 0.5,
         x: 0,
         opacity: 1,
         ease: Power2.easeOut
@@ -28,30 +34,30 @@ function transitionIn() {
     TweenMax.staggerFromTo($('.social .link'), 0.6, {
         x: -20,
     }, {
-        delay: 0.1,
+        delay: 0.5,
         x: 0,
         opacity: 1,
         ease: Power2.easeOut
     }, 0.05);
 }
 
-function setBackground() {
+function setBackgroundListener() {
 
     var textColor = $('#landing').css('color'),
         colors = ['#68C3A3', '#EB974E', '#81CFE0'], // CSS starts at #81CFE0
         animating = false;
 
-    $('#landing').on('mousemove', pickAndChangeColor);
+    $('#landing').on('mousemove', pickColor);
 
-    function pickAndChangeColor() {
+    function pickColor() {
 
         if (animating) return;
         animating = true;
 
-        var newBackgroundColor = colors.shift();
-        colors.push(newBackgroundColor);
+        var newColor = colors.shift();
+        colors.push(newColor);
 
-        changeColor(newBackgroundColor);
+        changeColor(newColor);
 
         setTimeout(function() {
             animating = false;

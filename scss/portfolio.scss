@@ -10,9 +10,11 @@
         right: 0;
         height: 5px;
         background-color: $navy;
+        z-index: 1;
     }
 
     .landing-link {
+        opacity: 0;
         position: fixed;
         top: calc(0.5em + 5px);
         left: 0.5em;
@@ -40,6 +42,7 @@
     }
 
     .content {
+        opacity: 0;
         width: 60%;
         max-width: 800px;
         text-align: center;

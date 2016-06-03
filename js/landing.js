@@ -1,6 +1,5 @@
 $(function() {
     transitionIn();
-    setBackgroundListener();
 
     $('.portfolio-link').on('click', goToPortfolio);
 });
@@ -13,6 +12,7 @@ function transitionIn() {
         ease: Power2.easeOut,
         onComplete: function() {
             $('#landing').addClass('loaded');
+            setBackgroundListener();
         }
     });
 
@@ -47,7 +47,7 @@ function transitionIn() {
 function setBackgroundListener() {
 
     var textColor = $('#landing').css('color'),
-        colors = ['#68C3A3', '#EB974E', '#81CFE0'], // CSS starts at #81CFE0
+        colors = ['#68C3A3', '#EB974E', '#81CFE0'], // starts at #81CFE0
         animating = false;
 
     $('#landing').on('mousemove', pickColor);

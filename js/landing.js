@@ -2,6 +2,7 @@ $(function() {
     transitionIn();
 
     $('.portfolio-link').on('click', goToPortfolio);
+    $('.external-link').on('click', externalLink);
 });
 
 function transitionIn() {
@@ -89,6 +90,20 @@ function goToPortfolio() {
         ease: Power2.easeInOut,
         onComplete: function() {
             window.location = '/portfolio.html';
+        }
+    });
+}
+
+function externalLink(evt) {
+
+    var href = $(evt.currentTarget).data('href');
+
+    TweenLite.to($('#landing'), 0.6, {
+        opacity: 0,
+        y: window.innerHeight,
+        ease: Power2.easeInOut,
+        onComplete: function() {
+            window.location = href;
         }
     });
 }

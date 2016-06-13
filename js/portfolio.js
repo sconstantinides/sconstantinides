@@ -67,7 +67,7 @@ function moveOutlines(newPos) {
 function swapImage(evt) {
 
     var target = $(evt.currentTarget),
-        image = target.data('image-url'),
+        image = target.css('background-image').slice(5, -2), // remove "url('" and "')"
         caption = target.siblings('.caption');
 
     target.addClass('current').siblings().removeClass('current');

@@ -20,6 +20,9 @@
         left: 0.5em;
         letter-spacing: 0.05em;
         padding: 0.5em;
+        font-family: 'Karla', sans-serif;
+        font-weight: $karla-normal;
+        letter-spacing: -0.01em;
         cursor: pointer;
         color: $navy;
         z-index: 1;
@@ -53,8 +56,8 @@
     }
 
     h1 {
-        font-family: 'Work Sans', sans-serif;
-        font-weight: $work-sans-light;
+        font-family: 'Karla', sans-serif;
+        font-weight: $karla-normal;
         display: inline-block;
         color: $navy;
         padding: 0.8em 1.6em;
@@ -87,25 +90,25 @@
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: $source-sans-bold;
         font-size: 1.3em;
-        margin: 2.5em 0 1em;
+        margin: 3rem 0 2rem;
     }
 
     .tags {
-        font-family: 'Work Sans', sans-serif;
-        font-weight: $work-sans-light;
+        font-family: 'Karla', sans-serif;
+        font-weight: $karla-normal;
         font-size: 0.9em;
         letter-spacing: 0.04em;
         background: rgba(0, 0, 0, 0.03);
         padding: 10px;
+        margin-bottom: 2rem;
     }
 
     p {
-        font-family: 'Work Sans', sans-serif;
-        font-weight: $work-sans-normal;
+        font-family: 'Karla', sans-serif;
+        font-weight: $karla-normal;
+        letter-spacing: -0.01em;
         font-size: 1.1em;
-        line-height: 1.8em;
-        letter-spacing: -0.02em;
-        margin: 1em 0 0 0;
+        line-height: 1.6em;
 
         &.caption {
             font-size: 0.9em;

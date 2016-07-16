@@ -14,5 +14,6 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: $source-sans-light;
     font-size: 1.6rem;
+    -webkit-font-smoothing: antialiased;
     min-width: 320px;
 }

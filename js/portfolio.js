@@ -77,13 +77,16 @@ function swapImage(evt) {
     caption.find('.description').text(target.attr('alt'));
 }
 
-function goToLanding() {
+function goToLanding(evt) {
 
-    TweenLite.to($('body'), 0.6, {
+    evt.preventDefault();
+    var href = $(evt.currentTarget).attr('href');
+
+    TweenLite.to($('body'), 0.1, {
         opacity: 0,
         ease: Power2.easeOut,
         onComplete: function() {
-            window.location = '/';
+            window.location = href;
         }
     });
 }

@@ -10,20 +10,22 @@ html(lang="en")
                 .bottom
                     span Designs &amp; develops for the web
                     .links
-                        .link.portfolio-link
+                        a.link.portfolio-link(href="/portfolio.html")
                             .text Portfolio
-                        .link.external-link(data-href="https://medium.com/@stothelios")
+                        a.link.external-link(href="https://medium.com/@stothelios")
                             .text Blog
 
             .social
-                .link.external-link(data-href="https://github.com/sconstantinides")
-                    i.fa.fa-github-alt
-                .link.external-link(data-href="https://dribbble.com/stothelios")
+                a.link.external-link(href="https://dribbble.com/stothelios")
                     i.fa.fa-dribbble
-                .link.external-link(data-href="https://twitter.com/stothelios")
-                    i.fa.fa-twitter
-                .link.external-link(data-href="https://www.linkedin.com/in/sconstantinides")
+                a.link.external-link(href="https://github.com/sconstantinides")
+                    i.fa.fa-github-alt
+                a.link.external-link(href="https://www.linkedin.com/in/sconstantinides")
                     i.fa.fa-linkedin
+                a.link.external-link(href="https://twitter.com/stothelios")
+                    i.fa.fa-twitter
+                a.link#email
+                    i.fa.fa-envelope-o
 
         include _javascript.pug
         script(src="dist/landing.min.js")

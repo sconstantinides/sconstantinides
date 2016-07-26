@@ -13,6 +13,7 @@ function transitionIn() {
         ease: Power2.easeOut,
         onComplete: function() {
             $('#landing').addClass('loaded');
+            setEmail();
             setBackgroundListener();
         }
     });
@@ -36,13 +37,20 @@ function transitionIn() {
     });
 
     TweenMax.staggerFromTo($('.social .link'), 0.6, {
-        x: -20,
+        x: -40,
     }, {
         delay: 0.5,
         x: 0,
         opacity: 1,
         ease: Power2.easeOut
-    }, 0.05);
+    }, 0.02);
+}
+
+function setEmail() {
+    var user = 'sconstantinides',
+        domain = 'gmail.com';
+
+    $('#email').attr('href', 'mailto:' + user + '@' + domain);
 }
 
 function setBackgroundListener() {
@@ -79,7 +87,10 @@ function changeColor(newBackgroundColor) {
     });
 }
 
-function goToPortfolio() {
+function goToPortfolio(evt) {
+
+    evt.preventDefault();
+    var href = $(evt.currentTarget).attr('href');
 
     $('#landing').off('mousemove').css('transition', 'background-color 0.6s');
     $('.logo .top').css('transition', 'text-shadow 0.6s');
@@ -89,16 +100,17 @@ function goToPortfolio() {
         y: -window.innerHeight + 5,
         ease: Power2.easeInOut,
         onComplete: function() {
-            window.location = '/portfolio.html';
+            window.location = href;
         }
     });
 }
 
 function externalLink(evt) {
 
-    var href = $(evt.currentTarget).data('href');
+    evt.preventDefault();
+    var href = $(evt.currentTarget).attr('href');
 
-    TweenLite.to($('#landing'), 0.6, {
+    TweenLite.to($('#landing'), 0.5, {
         opacity: 0,
         y: window.innerHeight,
         ease: Power2.easeInOut,

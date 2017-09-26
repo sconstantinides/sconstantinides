@@ -18,11 +18,11 @@
     cursor: pointer;
     font-family: 'Karla', sans-serif;
     font-weight: $karla-normal;
-    left: 20px;
+    left: 13px;
     opacity: 0;
     padding: 5px;
     position: fixed;
-    top: 20px;
+    top: 15px;
     z-index: 1;
 
     &:before {
@@ -52,13 +52,13 @@
 
   .content {
     margin: 0 auto;
-    max-width: 700px;
+    max-width: 720px;
     opacity: 0;
-    width: 80vw;
+  }
 
-    @media (max-width: 799px) {
-      width: calc(100vw - 40px);
-    }
+  .header {
+    overflow-x: hidden;
+    text-align: center;
   }
 
   h1 {
@@ -67,16 +67,15 @@
     font-family: 'Karla', sans-serif;
     font-size: 16px;
     font-weight: $karla-normal;
-    left: 50%;
     letter-spacing: 2.5px;
-    margin: 120px 0 60px 0;
+    margin: 120px -20px 60px -20px;
     padding: 17px 25px;
     position: relative;
     text-transform: uppercase;
-    transform: translateX(-50%);
+    white-space: nowrap;
   }
 
-  .headerOutline {
+  .header__outline {
     border: 1px solid $navy;
     bottom: 0;
     left: 0;
@@ -128,7 +127,7 @@
   }
 
   .project {
-    margin: 40px 0 80px 0;
+    margin: 40px 20px 80px 20px;
   }
 
   .project__images {

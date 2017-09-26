@@ -29,8 +29,8 @@ function transitionIn() {
 }
 
 function moveOutlines(newPos) {
-  $('.headerOutline--1').css('transform', 'translate(' + newPos[0][0] + 'px, ' + newPos[0][1] + 'px' + ')');
-  $('.headerOutline--2').css('transform', 'translate(' + newPos[1][0] + 'px, ' + newPos[1][1] + 'px' + ')');
+  $('.header__outline--1').css('transform', 'translate(' + newPos[0][0] + 'px, ' + newPos[0][1] + 'px' + ')');
+  $('.header__outline--2').css('transform', 'translate(' + newPos[1][0] + 'px, ' + newPos[1][1] + 'px' + ')');
 }
 
 function swapImage(evt) {

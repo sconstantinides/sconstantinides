@@ -7,9 +7,9 @@ $(function() {
 
 function transitionIn() {
   TweenLite.fromTo($('.content'), 0.6, {
-    y: 50
+    y: 60
   }, {
-    delay: 0.1,
+    delay: 0.3,
     y: 0,
     opacity: 1,
     ease: Power2.easeOut,
@@ -22,7 +22,7 @@ function transitionIn() {
   });
 
   TweenLite.to($('.landing-link'), 0.6, {
-    delay: 0.1,
+    delay: 0.3,
     opacity: 1,
     ease: Power2.easeOut
   });

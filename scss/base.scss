@@ -1,28 +1,29 @@
 @import 'variables';
 
-*,
-*:after,
-*:before {
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 62.5%;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: $source-sans-light;
-    font-size: 1.6rem;
-    -webkit-font-smoothing: antialiased;
-    min-width: 320px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: $source-sans-light;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 a {
-    color: $navy;
-    text-decoration: none;
+  color: $navy;
+  text-decoration: none;
 
-    &:hover, &:active, &:visited {
-        text-decoration: none;
-    }
+  &:hover,
+  &:active,
+  &:visited {
+    text-decoration: none;
+  }
 }

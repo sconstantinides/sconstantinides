@@ -1,5 +1,5 @@
 $(function() {
-    $(window).bind('pageshow', function(event) {
-        if (event.originalEvent.persisted) window.location.reload();
-    });
+  $(window).bind('pageshow', function(event) {
+    if (event.originalEvent.persisted) window.location.reload();
+  });
 });

@@ -33,7 +33,6 @@ gulp.task('scripts', function() {
 gulp.task('styles', function() {
   gulp.src('scss/*.scss')
     .pipe(order([
-      'reset.scss',
       'base.scss',
       '*'
     ]))
@@ -45,7 +44,7 @@ gulp.task('styles', function() {
     }))
     .pipe(concat('all.css'))
     .pipe(cleanCSS({
-      compatibility: 'ie8'
+      compatibility: '*'
     }))
     .pipe(rename('all.min.css'))
     .pipe(gulp.dest('dist'));

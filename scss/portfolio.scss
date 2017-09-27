@@ -1,7 +1,7 @@
 @import 'variables';
 
 #portfolio {
-  color: $black;
+  color: $dark-gray;
 
   .border {
     background-color: $navy;
@@ -13,7 +13,7 @@
     z-index: 1;
   }
 
-  .landing-link {
+  .goBack {
     color: $navy;
     cursor: pointer;
     font-family: 'Karla', sans-serif;
@@ -86,7 +86,7 @@
   }
 
   h2 {
-    border-bottom: 1px solid $black;
+    border-bottom: 1px solid $dark-gray;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 36px;
     font-weight: $source-sans-bold;
@@ -101,7 +101,7 @@
   }
 
   .tags {
-    background: rgba(0, 0, 0, 0.03);
+    background: $very-light-gray;
     font-family: 'Karla', sans-serif;
     font-size: 14px;
     font-weight: $karla-normal;
@@ -135,36 +135,45 @@
     text-align: center;
 
     .thumb {
-      background-position: center center;
+      background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
-      border: 3px solid $white;
+      border: 3px solid $very-light-gray;
       cursor: pointer;
       display: inline-block;
       height: 100px;
-      width: 22%;
+      width: 130px;
 
       &:not(:first-of-type) {
-        margin-left: 4%;
-      }
-
-      &.current {
-        border-color: $navy;
+        margin-left: 20px;
       }
 
       @media (min-width: 800px) {
-        &:hover:not(.current) {
-          border-color: rgba(0, 0, 0, 0.1);
+        &:hover:not(.thumb--current) {
+          border-color: $light-gray;
         }
       }
 
       @media (max-width: 799px) {
-        height: 80px;
+        height: 60px;
+        width: 80px;
+
+        &:not(:first-of-type) {
+          margin-left: 10px;
+        }
       }
     }
 
+    .thumb--bleed {
+      background-size: cover;
+    }
+
+    .thumb--current {
+      border-color: $navy;
+    }
+
     .large {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid $light-gray;
       width: 100%;
     }
   }

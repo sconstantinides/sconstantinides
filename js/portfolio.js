@@ -2,7 +2,7 @@ $(function() {
   transitionIn();
 
   $('.thumb').on('click', swapImage);
-  $('.landing-link').on('click', goToLanding);
+  $('.goBack').on('click', goToLanding);
 });
 
 function transitionIn() {
@@ -21,7 +21,7 @@ function transitionIn() {
     }
   });
 
-  TweenLite.to($('.landing-link'), 0.6, {
+  TweenLite.to($('.goBack'), 0.6, {
     delay: 0.3,
     opacity: 1,
     ease: Power2.easeOut
@@ -38,7 +38,7 @@ function swapImage(evt) {
   var image = target.css('background-image').replace('url(', '').replace(')', '').replace(/["|']/g, '');
   var caption = target.siblings('.caption');
 
-  target.addClass('current').siblings().removeClass('current');
+  target.addClass('thumb--current').siblings().removeClass('thumb--current');
   target.siblings('.large').css('max-width', target.css('max-width')).attr('src', image);
 
   caption.find('.number').text(target.index() + 1);

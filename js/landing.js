@@ -1,8 +1,8 @@
 $(function() {
   transitionIn();
 
-  $('.portfolio-link').on('click', goToPortfolio);
-  $('.external-link').on('click', externalLink);
+  $('.portfolioLink').on('click', goToPortfolio);
+  $('.externalLink').on('click', externalLink);
 });
 
 function transitionIn() {
@@ -50,7 +50,7 @@ function setEmail() {
   var user = 'sconstantinides';
   var domain = 'gmail.com';
 
-  $('#email').attr('href', 'mailto:' + user + '@' + domain);
+  $('.social__link--email').attr('href', 'mailto:' + user + '@' + domain);
 }
 
 function setBackgroundListener() {

@@ -12,14 +12,15 @@ function transitionIn() {
     delay: 0.3,
     y: 0,
     opacity: 1,
-    ease: Power2.easeOut,
-    onComplete: function() {
-      moveOutlines([
-        [8, 6],
-        [-8, -6]
-      ]);
-    }
+    ease: Power2.easeOut
   });
+
+  setTimeout(function() {
+    moveOutlines([
+      [8, 6],
+      [-8, -6]
+    ]);
+  }, 700);
 
   TweenLite.to($('.goBack'), 0.6, {
     delay: 0.3,

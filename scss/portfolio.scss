@@ -127,7 +127,9 @@
   }
 
   .project {
+    border-bottom: 1px solid $light-gray;
     margin: 40px 20px 80px 20px;
+    padding-bottom: 20px;
   }
 
   .project__images {
@@ -137,7 +139,7 @@
     .thumb {
       background-position: center;
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: 80%;
       border: 3px solid $very-light-gray;
       cursor: pointer;
       display: inline-block;
@@ -164,16 +166,17 @@
       }
     }
 
-    .thumb--bleed {
-      background-size: cover;
-    }
-
     .thumb--current {
       border-color: $navy;
     }
 
     .large {
-      border-bottom: 1px solid $light-gray;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 500px;
+      margin: 0 auto;
+      max-width: 500px;
       width: 100%;
     }
   }

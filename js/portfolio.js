@@ -36,14 +36,14 @@ function moveOutlines(newPos) {
 
 function swapImage(evt) {
   var target = $(evt.currentTarget);
-  var image = target.css('background-image').replace('url(', '').replace(')', '').replace(/["|']/g, '');
+  var image = target.css('background-image');
   var caption = target.siblings('.caption');
 
   target.addClass('thumb--current').siblings().removeClass('thumb--current');
-  target.siblings('.large').css('max-width', target.css('max-width')).attr('src', image);
+  target.siblings('.large').css('background-image', image);
 
   caption.find('.number').text(target.index() + 1);
-  caption.find('.description').text(target.attr('alt'));
+  caption.find('.description').text(target.data('description'));
 }
 
 function goToLanding(evt) {

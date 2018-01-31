@@ -1,1 +1,1 @@
-Stelios Constantinides' personal site: [steliosconstantinides.com](http://www.steliosconstantinides.com)
+Stelios Constantinides' personal site: [steliosconstantinides.com](https://www.steliosconstantinides.com)

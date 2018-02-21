@@ -71,4 +71,6 @@ function onError(err) {
   this.emit('end');
 }
 
-gulp.task('default', ['lint', 'clean', 'scripts', 'styles', 'webserver', 'watch']);
+gulp.task('build', ['lint', 'clean', 'scripts', 'styles']);
+
+gulp.task('default', ['build', 'webserver', 'watch']);

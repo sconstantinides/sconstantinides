@@ -2,11 +2,9 @@ $(function() {
   transitionIn();
 
   $('.portfolioLink').on('click', goToPortfolio);
-  $('.externalLink').on('click', externalLink);
 });
 
 function transitionIn() {
-
   TweenLite.to($('#landing'), 0.4, {
     delay: 0.1,
     backgroundColor: '#81CFE0',
@@ -92,20 +90,6 @@ function goToPortfolio(evt) {
 
   TweenLite.to($('#landing'), 0.6, {
     y: -window.innerHeight + 5,
-    ease: Power2.easeInOut,
-    onComplete: function() {
-      window.location = href;
-    }
-  });
-}
-
-function externalLink(evt) {
-  evt.preventDefault();
-  var href = $(evt.currentTarget).attr('href');
-
-  TweenLite.to($('#landing'), 0.5, {
-    opacity: 0,
-    y: window.innerHeight,
     ease: Power2.easeInOut,
     onComplete: function() {
       window.location = href;

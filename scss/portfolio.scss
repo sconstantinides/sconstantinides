@@ -9,7 +9,8 @@
     top: 0;
     right: 0;
     left: 0;
-    height: 5px;
+    height: calc(100vh + 5px);
+    transform: translateY(-100vh);
     background-color: $navy;
   }
 

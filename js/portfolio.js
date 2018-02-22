@@ -2,7 +2,6 @@ $(function() {
   transitionIn();
 
   $('.thumb').on('click', swapImage);
-  $('.link--back').on('click', goToLanding);
 });
 
 function transitionIn() {
@@ -44,17 +43,4 @@ function swapImage(evt) {
 
   caption.find('.number').text(target.index() + 1);
   caption.find('.description').text(target.data('description'));
-}
-
-function goToLanding(evt) {
-  evt.preventDefault();
-  var href = $(evt.currentTarget).attr('href');
-
-  TweenLite.to($('body'), 0.1, {
-    opacity: 0,
-    ease: Power2.easeOut,
-    onComplete: function() {
-      window.location = href;
-    }
-  });
 }

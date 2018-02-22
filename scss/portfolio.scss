@@ -4,38 +4,38 @@
   color: $dark-gray;
 
   .border {
-    background-color: $navy;
-    height: 5px;
-    left: 0;
     position: fixed;
-    right: 0;
-    top: 0;
     z-index: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 5px;
+    background-color: $navy;
   }
 
   .goBack {
-    color: $navy;
+    position: fixed;
+    z-index: 1;
+    top: 15px;
+    left: 13px;
+    padding: 5px;
     cursor: pointer;
+    opacity: 0;
+    color: $navy;
     font-family: 'Karla', sans-serif;
     font-weight: $karla-normal;
-    left: 13px;
-    opacity: 0;
-    padding: 5px;
-    position: fixed;
-    top: 15px;
-    z-index: 1;
 
     &:before {
-      background-color: $navy;
-      bottom: 0;
-      content: '';
-      height: 1px;
-      left: 5px;
       position: absolute;
       right: 5px;
+      bottom: 0;
+      left: 5px;
+      height: 1px;
+      content: '';
+      transition: transform 0.2s $easeInOutCubic;
       transform: scaleX(0);
       transform-origin: right;
-      transition: transform 0.2s $easeInOutCubic;
+      background-color: $navy;
     }
 
     @media (min-width: 800px) {
@@ -51,8 +51,8 @@
   }
 
   .content {
-    margin: 0 auto;
     max-width: 720px;
+    margin: 0 auto;
     opacity: 0;
   }
 
@@ -62,51 +62,51 @@
   }
 
   h1 {
-    color: $navy;
+    position: relative;
     display: inline-block;
+    margin: 120px -20px 60px -20px;
+    padding: 17px 25px;
+    white-space: nowrap;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: $navy;
     font-family: 'Karla', sans-serif;
     font-size: 16px;
     font-weight: $karla-normal;
-    letter-spacing: 2.5px;
-    margin: 120px -20px 60px -20px;
-    padding: 17px 25px;
-    position: relative;
-    text-transform: uppercase;
-    white-space: nowrap;
   }
 
   .header__outline {
-    border: 1px solid $navy;
+    position: absolute;
+    top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
     transition: transform 1.5s $easeOutCubic;
+    border: 1px solid $navy;
   }
 
   h2 {
+    padding-bottom: 15px;
     border-bottom: 1px solid $dark-gray;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 36px;
     font-weight: $source-sans-bold;
-    padding-bottom: 15px;
   }
 
   h3 {
+    margin: 30px 0 20px 0;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 22px;
     font-weight: $source-sans-bold;
-    margin: 30px 0 20px 0;
   }
 
   .tags {
+    margin-bottom: 30px;
+    padding: 15px;
     background: $very-light-gray;
     font-family: 'Karla', sans-serif;
     font-size: 14px;
     font-weight: $karla-normal;
-    margin-bottom: 30px;
-    padding: 15px;
   }
 
   p {
@@ -116,9 +116,9 @@
   }
 
   .caption {
-    font-size: 16px;
     margin: 30px 0 20px 0;
     text-align: center;
+    font-size: 16px;
 
     .strong {
       font-family: 'Source Sans Pro', sans-serif;
@@ -127,9 +127,9 @@
   }
 
   .project {
-    border-bottom: 1px solid $light-gray;
     margin: 40px 20px 80px 20px;
     padding-bottom: 20px;
+    border-bottom: 1px solid $light-gray;
   }
 
   .project__images {
@@ -137,14 +137,14 @@
     text-align: center;
 
     .thumb {
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 80%;
-      border: 3px solid $very-light-gray;
-      cursor: pointer;
       display: inline-block;
-      height: 100px;
       width: 130px;
+      height: 100px;
+      cursor: pointer;
+      border: 3px solid $very-light-gray;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 80%;
 
       &:not(:first-of-type) {
         margin-left: 20px;
@@ -157,8 +157,8 @@
       }
 
       @media (max-width: 799px) {
-        height: 60px;
         width: 80px;
+        height: 60px;
 
         &:not(:first-of-type) {
           margin-left: 10px;
@@ -171,13 +171,13 @@
     }
 
     .large {
-      background-position: top;
-      background-repeat: no-repeat;
-      background-size: contain;
+      width: 100%;
+      max-width: 500px;
       height: 500px;
       margin: 0 auto;
-      max-width: 500px;
-      width: 100%;
+      background-repeat: no-repeat;
+      background-position: top;
+      background-size: contain;
     }
   }
 }

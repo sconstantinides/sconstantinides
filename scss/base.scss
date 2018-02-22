@@ -9,21 +9,23 @@
 * {
   margin: 0;
   padding: 0;
+
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 18px;
-  -webkit-font-smoothing: antialiased;
   font-weight: $source-sans-light;
   line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-  color: $navy;
   text-decoration: none;
+  color: $navy;
 
   &:hover,
   &:active,

@@ -1,31 +1,32 @@
 @import 'variables';
 
 #landing {
-  align-items: center;
-  background-color: $white;
-  bottom: 0;
-  color: $navy;
-  display: flex;
-  justify-content: center;
-  left: 0;
   position: absolute;
-  right: 0;
   top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $navy;
+  background-color: $white;
 
   &.loaded {
     transition: background-color 2s linear;
   }
 
   .logo {
-    text-transform: uppercase;
     transform: translateY(-50%);
+    text-transform: uppercase;
   }
 
   .logo__top {
-    color: transparent;
-    font-size: 40px;
+    transition: text-shadow 2s linear;
+    transform: rotate(-17deg) skewX(35deg) skewY(0deg);
     letter-spacing: 0.26em;
     opacity: 0;
+    color: transparent;
     text-shadow: -1px 1px 0 $blue,
     -2px 2px 0 $navy,
     -3px 3px 0 $navy,
@@ -36,55 +37,54 @@
     -8px 8px 0 $navy,
     -9px 9px 0 $navy,
     -10px 10px 0 $navy;
-    transform: rotate(-17deg) skewX(35deg) skewY(0deg);
-    transition: text-shadow 2s linear;
+    font-size: 40px;
   }
 
   .logo__bottom {
-    color: $navy;
-    letter-spacing: 2.5px;
-    line-height: 1.5;
-    margin: 30px 0 0 25px;
-    opacity: 0;
-    transform: skewY(-17deg);
     width: 240px;
+    margin: 30px 0 0 25px;
+    transform: skewY(-17deg);
+    letter-spacing: 2.5px;
+    opacity: 0;
+    color: $navy;
+    line-height: 1.5;
   }
 
   .logo__bottom__links {
-    margin-top: 20px;
     position: absolute;
+    margin-top: 20px;
   }
 
   .logo__bottom__link {
-    cursor: pointer;
+    position: relative;
     display: inline-block;
     margin-right: 20px;
     padding: 3px 5px 6px 10px;
-    position: relative;
+    cursor: pointer;
 
     &:before {
-      background-color: $navy;
-      bottom: 0;
-      content: '';
-      left: 0;
       position: absolute;
       top: 0;
-      transform-origin: top;
-      transition: transform 0.15s $easeInOutCubic;
+      bottom: 0;
+      left: 0;
       width: 1px;
+      content: '';
+      transition: transform 0.15s $easeInOutCubic;
+      transform-origin: top;
+      background-color: $navy;
     }
 
     &:after {
-      background-color: $navy;
-      bottom: 0;
-      content: '';
-      height: 1px;
-      left: 0;
       position: absolute;
       right: 0;
-      transform-origin: right;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      content: '';
       transition: transform 0.15s $easeInOutCubic;
       transition-delay: 0.1s;
+      transform-origin: right;
+      background-color: $navy;
     }
 
     @media (min-width: 800px) {
@@ -112,60 +112,60 @@
 
   .logo__bottom__link span {
     &:before {
-      background-color: $navy;
-      bottom: 0;
-      content: '';
       position: absolute;
-      right: 0;
       top: 0;
-      transform: scaleY(0);
-      transform-origin: bottom;
+      right: 0;
+      bottom: 0;
+      width: 1px;
+      content: '';
       transition: transform 0.15s $easeInOutCubic;
       transition-delay: 0.1s;
-      width: 1px;
+      transform: scaleY(0);
+      transform-origin: bottom;
+      background-color: $navy;
     }
 
     &:after {
-      background-color: $navy;
-      content: '';
-      height: 1px;
-      left: 0;
       position: absolute;
-      right: 0;
       top: 0;
+      right: 0;
+      left: 0;
+      height: 1px;
+      content: '';
+      transition: transform 0.15s $easeInOutCubic;
       transform: scaleX(0);
       transform-origin: left;
-      transition: transform 0.15s $easeInOutCubic;
+      background-color: $navy;
     }
   }
 
   .social {
-    align-items: center;
-    bottom: 20px;
-    display: flex;
-    justify-content: center;
-    left: 0;
     position: absolute;
     right: 0;
+    bottom: 20px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .social__link {
     margin-right: 15px;
-    opacity: 0;
     padding: 5px;
+    opacity: 0;
 
     &:last-of-type {
       margin-right: 0;
     }
 
     .icon {
-      height: 18px;
       width: 18px;
+      height: 18px;
     }
 
     .icon--dribbble {
-      height: 17px;
       width: 17px;
+      height: 17px;
     }
   }
 }

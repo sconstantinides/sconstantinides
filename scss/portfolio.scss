@@ -13,23 +13,16 @@
     background-color: $navy;
   }
 
-  .goBack {
-    position: fixed;
-    z-index: 1;
-    top: 15px;
-    left: 13px;
-    padding: 5px;
+  .link {
+    position: relative;
     cursor: pointer;
-    opacity: 0;
     color: $navy;
-    font-family: 'Karla', sans-serif;
-    font-weight: $karla-normal;
 
     &:before {
       position: absolute;
-      right: 5px;
-      bottom: 0;
-      left: 5px;
+      right: 0;
+      bottom: -3px;
+      left: 0;
       height: 1px;
       content: '';
       transition: transform 0.2s $easeInOutCubic;
@@ -44,6 +37,16 @@
         transform-origin: left;
       }
     }
+  }
+
+  .link--back {
+    position: fixed;
+    z-index: 1;
+    top: 15px;
+    left: 13px;
+    opacity: 0;
+    font-family: 'Karla', sans-serif;
+    font-weight: $karla-normal;
 
     @media (max-width: 799px) {
       position: absolute;

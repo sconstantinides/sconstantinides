@@ -2,7 +2,7 @@ $(function() {
   transitionIn();
 
   $('.thumb').on('click', swapImage);
-  $('.goBack').on('click', goToLanding);
+  $('.link--back').on('click', goToLanding);
 });
 
 function transitionIn() {
@@ -22,7 +22,7 @@ function transitionIn() {
     ]);
   }, 700);
 
-  TweenLite.to($('.goBack'), 0.6, {
+  TweenLite.to($('.link--back'), 0.6, {
     delay: 0.3,
     opacity: 1,
     ease: Power2.easeOut

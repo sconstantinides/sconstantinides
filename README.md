@@ -7,4 +7,4 @@
                                                                                                            
 ```
 
-[Personal site for Stelios Constantinides](https://www.steliosconstantinides.com)
+[My personal site](https://www.steliosconstantinides.com)

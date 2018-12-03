@@ -34,7 +34,7 @@ function transitionIn() {
     ease: Power2.easeOut
   });
 
-  TweenMax.staggerFromTo($('.social__link'), 0.8, {
+  TweenMax.staggerFromTo($('.contact__link'), 0.8, {
     y: 20,
   }, {
     delay: 0.7,
@@ -48,7 +48,7 @@ function setEmail() {
   var user = 'sconstantinides';
   var domain = 'gmail.com';
 
-  $('.social__link--email').attr('href', 'mailto:' + user + '@' + domain);
+  $('.contact__link--email').attr('href', 'mailto:' + user + '@' + domain);
 }
 
 function setBackgroundListener() {
